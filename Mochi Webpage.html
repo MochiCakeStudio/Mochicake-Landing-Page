@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mochicake.Studio owo?/ </title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet">
+
+  <style>
+    /* General styles for the page */
+    body {
+      background: linear-gradient(to bottom right, #ffc0cb, #add8e6); /* Pink to blue ombre */
+      font-family: 'DM Mono', monospace;
+      color: white;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    /*desktop things*/ 
+    .desktop-container {
+      width: 90%;
+      height: 90%;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    /* Styles for the "tabs" */
+    .tab {
+      width: 320px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      font-family: 'DM Mono', monospace;
+    }
+
+    .tab-header {
+      background-color: black;
+      color: white;
+      padding: 10px;
+      border-radius: 8px 8px 0 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .tab-header:hover {
+      background-color: black;
+    }
+
+    .tab-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 0 0 8px 8px;
+      height: 200px;
+      overflow-y: auto;
+    }
+
+    .tab-content p {
+      color: #333;
+      font-size: 16px;
+    }
+
+    .tab-content a {
+      color: black;
+    }
+
+    h1 {
+      color: #ffc0c8;
+      margin-bottom: 0;
+    }
+
+    .divider {
+      width: 150px;
+      height: 4px;
+      background: linear-gradient(to right, #ffc0cb, #add8e6);
+      border-radius: 10px;
+      margin: 10px 0 20px;
+    }
+
+    .page-border {
+      border: 5px solid black;
+      padding: 20px;
+      margin: 20px auto;
+      max-width: 900px;
+      background-color: black;
+      border-radius: 30px;
+    }
+
+    a {
+      color: #DFEFDB;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: rgb(127, 193, 255);
+    }
+
+    .container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding-top: 10px;
+      font-family: 'DM Mono', monospace;
+    }
+
+    .card {
+      width: 250px;
+      height: 100%;
+      background-color: white;
+      border-radius: 50px;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
+      text-align: center;
+      box-shadow: 15px 10px 5px rgba(189, 189, 189, .3);
+      transition: transform 0.3s ease;
+      font-family: 'DM Mono', monospace;
+    }
+
+    .card:hover {
+      transform: translateY(-15px);
+    }
+
+    .cursor-text {
+      position: fixed;
+      pointer-events: none;
+      font-family: 'DM Mono', monospace;
+      font-size: 20px;
+      color: white;
+      transform: scaleX(-1);
+      z-index: 9999;
+      mix-blend-mode: difference;
+    }
+
+    /* Animation Section */
+    .status-items {
+      display: flex;
+      flex-direction: column;
+      animation: scroll-bounce 10s infinite;
+    }
+
+    .status-items div {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'DM Mono', monospace;
+      color: #333;
+    }
+
+    @keyframes scroll-bounce {
+      0% { transform: translateY(0); }
+      16.6% { transform: translateY(-40px); animation-timing-function: ease-out; }
+      33.3% { transform: translateY(-80px); animation-timing-function: ease-in; }
+      50% { transform: translateY(-120px); animation-timing-function: ease-out; }
+      66.6% { transform: translateY(-160px); animation-timing-function: ease-in; }
+      83.3% { transform: translateY(-200px); animation-timing-function: ease-out; }
+      100% { transform: translateY(0); }
+    }
+
+    /* Animation Ticker */
+    .animation {
+      height: 50px;
+      overflow: hidden;
+      margin-left: 1rem;
+    }
+
+    .animation > div > div {
+      padding: 0.25rem 0.75rem;
+      height: 2.81rem;
+      margin-bottom: 2.81rem;
+      display: inline-block;
+      font-family: 'DM Mono', monospace;
+    }
+
+    .animation div:first-child {
+      animation: text-animation 8s infinite;
+    }
+
+    .first div { background-color: #add8e6; }
+    .second div { background-color: #f4e5c0; }
+    .third div { background-color: #fac9d1; }
+    .forth div { background-color: #e1efce ; }
+
+    @keyframes text-animation {
+      0% {margin-top: 0;}
+      10% {margin-top: 0;}
+      20% {margin-top: -5.62rem;}
+      30% {margin-top: -5.62rem;}
+      40% {margin-top: -11.24rem;}
+      60% {margin-top: -11.24rem;}
+      70% {margin-top: -5.62rem;}
+      80% {margin-top: -5.62rem;}
+      90% {margin-top: 0;}
+      100% {margin-top: 0;}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Main Container -->
+  <div class="page-border">
+    <h1>Mochicake.Studio</h1>
+    <div class="divider"></div>
+    <p>
+  <main class="container">
+    <p>Hello 👋 I'm Emiko Mochi, I'm currently ....</p>
+    <section class="animation">
+      <div class="first"><div>Learning Front-End Magic</div></div>
+      <div class="second"><div>Crafting Artisan Keycaps</div></div>
+      <div class="third"><div>Spoiling my code with pastel</div></div>
+    </section>
+  </main>Welcome to my personal website! I'm a junior front-end developer with a passion for creating beautiful
+      and functional web experiences. I also enjoy crafting artisan products and exploring the world of mechanical 
+      keyboards—from the small characters that sit on your keyboard to whimsical cases that add a talking piece to your desk!
+      Feel free to reach out if you'd like to collaborate or just chat!
+    </p>
+  </div>
+
+  <!-- Desktop Container with Tabs -->
+  <div class="desktop-container">
+    <!-- Projects Tab -->
+    <div class="tab">
+      <div class="tab-header">
+        <span>Projects</span>
+        <span>X</span>
+      </div>
+      <div class="tab-content">
+        <h4>Our Latest Projects</h4>
+        <p>Check out our artisan catalog, keyset catalog, and accessories catalog!</p>
+        <div class="container">
+          <div class="card" style="background-color: pink;">Artisan Catalog</div>
+          <div class="card" style="background-color: lightblue;">Keyset Catalog</div>
+          <div class="card" style="background-color: white;">Accessories Catalog</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sales Tab -->
+    <div class="tab">
+      <div class="tab-header">
+        <span>Current Sales</span>
+        <span>X</span>
+      </div>
+      <div class="tab-content">
+        <h4>Sales & Deals</h4>
+        <p>Looking for the best deals on keycaps, accessories, and more!</p>
+        <div class="container">
+          <div class="card" style="background-color: pink;">Keyboard Commissions</div>
+          <div class="card" style="background-color: lightblue;">Artisan Sale(s)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Affiliates Tab -->
+    <div class="tab">
+      <div class="tab-header">
+        <span>Affiliates</span>
+        <span>X</span>
+      </div>
+      <div class="tab-content">
+        <h4>Fellow Keeb Lovers!</h4>
+        <p>Here are some great shops and stores to check out for more keeb goodness!</p>
+        <div class="container">
+          <div class="card" style="background-color: pink;">Dang Keebs</div>
+          <div class="card" style="background-color: lightblue;">Personal Loot</div>
+          <div class="card" style="background-color: white;">Kono Store</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Chat Tab -->
+    <div class="tab">
+      <div class="tab-header">
+        <span>Find Us!</span>
+        <span>X</span>
+      </div>
+      <div class="tab-content">
+        <p>If you're up for a collab, looking for help, or just want a fellow keeb lover,  or coding hit my inbox!</p>
+        <p><a href="mailto:mochicakes.studio@gmail.com">Email Us!</a></p>
+        <p><a href="https://www.instagram.com/mochicake.studio/">Instagram</a></p>
+        <p><a href="https://discord.gg/tntVqe8b3k">Discord</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="cursor-text">owo?/</div>
+
+  <script>
+    const cursorText = document.querySelector('.cursor-text');
+    document.addEventListener('mousemove', e => {
+      cursorText.style.left = e.clientX + 10 + 'px';
+      cursorText.style.top = e.clientY + 10 + 'px';
+    });
+  </script>
+
+</body>
+</html>
