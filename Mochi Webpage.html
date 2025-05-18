@@ -11,13 +11,14 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
+  
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet" />
 
   <style>
     /* General Layout */
     body {
-      background: linear-gradient(to bottom right, #ffc0cb, #add8e6);
+      background: linear-gradient(to bottom right, #FAC9D1, #F4E5C0, #E1EFCE, #c0c0c0);
       font-family: 'DM Mono', monospace;
       color: white;
       margin: 0;
@@ -45,7 +46,7 @@
     .divider {
       width: 150px;
       height: 4px;
-      background: linear-gradient(to right, #ffc0cb, #add8e6);
+      background: linear-gradient(to right, #FAC9D1, #F4E5C0, #E1EFCE, #c0c0c0);
       border-radius: 10px;
       margin: 10px 0 20px;
     }
@@ -176,10 +177,33 @@
       z-index: 9999;
       mix-blend-mode: difference;
     }
+    body {
+  /* Gradient Background */
+  background: linear-gradient(270deg, #FAC9D1, #F4E5C0, #E1EFCE, #c0c0c0);
+  background-size: 800% 800%; /* SUPER important for movement */
+
+  /* Animation */
+  animation: gradientFlow 12s ease infinite;
+}
+
+/* Keyframes for the animation */
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
   </style>
 </head>
 <body>
 
+  
   <!-- Header Section -->
   <div class="page-border">
     <h1>Mochicake.Studio</h1>
@@ -278,5 +302,7 @@
       cursorText.style.top = `${e.clientY + 10}px`;
     });
   </script>
+
+  
 </body>
 </html>
