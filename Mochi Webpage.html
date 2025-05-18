@@ -11,38 +11,41 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
-  
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet" />
-
   <style>
-    /* General Layout */
+    :root {
+      --bg-light: linear-gradient(270deg, #FAC9D1, #F4E5C0, #E1EFCE, #c0c0c0);
+      --bg-dark: linear-gradient(270deg, #1a1a1a, #2c2c2c, #3d3d3d, #1a1a1a);
+      --text-light: white;
+      --text-dark: #ccc;
+    }
     body {
-      background: linear-gradient(to bottom right, #FAC9D1, #F4E5C0, #E1EFCE, #c0c0c0);
       font-family: 'DM Mono', monospace;
-      color: white;
+      color: var(--text-light);
       margin: 0;
       padding: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
+      background: var(--bg-light);
+      background-size: 800% 800%;
+      animation: gradientFlow 12s ease infinite;
+      transition: background 0.5s ease;
     }
-
-    h1 {
-      color: #ffc0c8;
-      margin-bottom: 0;
+    @keyframes gradientFlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
     }
-
-    a {
-      color: #DFEFDB;
-      text-decoration: none;
+    .dark-mode {
+      background: var(--bg-dark);
+      color: var(--text-dark);
     }
-
-    a:hover {
-      color: rgb(127, 193, 255);
-    }
-
+    h1 { color: #ffc0c8; margin-bottom: 0; }
+    a { color: #DFEFDB; text-decoration: none; }
+    a:hover { color: rgb(127, 193, 255); }
     .divider {
       width: 150px;
       height: 4px;
@@ -50,7 +53,6 @@
       border-radius: 10px;
       margin: 10px 0 20px;
     }
-
     .page-border {
       border: 5px solid black;
       padding: 20px;
@@ -59,37 +61,27 @@
       background-color: black;
       border-radius: 30px;
     }
-
-    /* Scrolling animation ticker */
     .container {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
       gap: 20px;
-      font-family: 'DM Mono', monospace;
     }
-
     .animation {
       height: 50px;
       overflow: hidden;
       margin-left: 1rem;
     }
-
     .animation > div > div {
       padding: 0.25rem 0.75rem;
       height: 2.81rem;
       margin-bottom: 2.81rem;
       display: inline-block;
     }
-
-    .animation div:first-child {
-      animation: text-animation 8s infinite;
-    }
-
+    .animation div:first-child { animation: text-animation 8s infinite; }
     .first div { background-color: #add8e6; }
     .second div { background-color: #f4e5c0; }
     .third div { background-color: #fac9d1; }
-
     @keyframes text-animation {
       0%, 10% { margin-top: 0; }
       20%, 30% { margin-top: -5.62rem; }
@@ -97,8 +89,6 @@
       70%, 80% { margin-top: -5.62rem; }
       90%, 100% { margin-top: 0; }
     }
-
-    /* Desktop Tabs */
     .desktop-container {
       width: 90%;
       max-width: 1200px;
@@ -108,7 +98,6 @@
       gap: 20px;
       padding: 20px 0;
     }
-
     .tab {
       width: 320px;
       background-color: white;
@@ -117,7 +106,6 @@
       display: flex;
       flex-direction: column;
     }
-
     .tab-header {
       background-color: black;
       color: white;
@@ -129,23 +117,13 @@
       font-weight: bold;
       cursor: pointer;
     }
-
     .tab-content {
       background-color: white;
       padding: 20px;
       border-radius: 0 0 8px 8px;
-      height: auto;
     }
-
-    .tab-content p {
-      color: #333;
-    }
-
-    .tab-content a {
-      color: black;
-    }
-
-    /* Cards */
+    .tab-content p { color: #333; }
+    .tab-content a { color: black; }
     .card {
       width: 250px;
       background-color: white;
@@ -161,50 +139,36 @@
       padding: 20px;
       margin-top: 10px;
     }
-
-    .card:hover {
-      transform: translateY(-15px);
-    }
-
-    /* Cursor */
+    .card:hover { transform: translateY(-15px); }
     .cursor-text {
       position: fixed;
       pointer-events: none;
-      font-family: 'DM Mono', monospace;
       font-size: 20px;
       color: white;
       transform: scaleX(-1);
       z-index: 9999;
       mix-blend-mode: difference;
     }
-    body {
-  /* Gradient Background */
-  background: linear-gradient(270deg, #FAC9D1, #F4E5C0, #E1EFCE, #c0c0c0);
-  background-size: 800% 800%; /* SUPER important for movement */
-
-  /* Animation */
-  animation: gradientFlow 12s ease infinite;
-}
-
-/* Keyframes for the animation */
-@keyframes gradientFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
+    .theme-toggle {
+      position: fixed;
+      top: 10px;
+      right: 10px;
+      background: transparent;
+      font-size: 24px;
+      border: none;
+      cursor: pointer;
+      z-index: 999;
+      transition: transform 0.3s ease;
+    }
+    .theme-toggle:hover {
+      transform: rotate(20deg);
+    }
   </style>
 </head>
 <body>
 
-  
-  <!-- Header Section -->
+  <button class="theme-toggle" onclick="toggleTheme()">🌞</button>
+
   <div class="page-border">
     <h1>Mochicake.Studio</h1>
     <div class="divider"></div>
@@ -224,17 +188,10 @@
     </p>
   </div>
 
-  <!-- Tabs Section -->
   <div class="desktop-container">
-
-    <!-- Projects Tab -->
     <div class="tab">
-      <div class="tab-header">
-        <span>Projects</span>
-        <span>X</span>
-      </div>
+      <div class="tab-header"><span>Projects</span><span>X</span></div>
       <div class="tab-content">
-        <h4>Our Latest Projects</h4>
         <p>Check out our artisan catalog, keyset catalog, and accessories catalog!</p>
         <div class="container">
           <div class="card" style="background-color: pink;">Artisan Catalog</div>
@@ -243,15 +200,9 @@
         </div>
       </div>
     </div>
-
-    <!-- Sales Tab -->
     <div class="tab">
-      <div class="tab-header">
-        <span>Current Sales</span>
-        <span>X</span>
-      </div>
+      <div class="tab-header"><span>Current Sales</span><span>X</span></div>
       <div class="tab-content">
-        <h4>Sales & Deals</h4>
         <p>Looking for the best deals on keycaps, accessories, and more!</p>
         <div class="container">
           <div class="card" style="background-color: pink;">Keyboard Commissions</div>
@@ -259,15 +210,9 @@
         </div>
       </div>
     </div>
-
-    <!-- Affiliates Tab -->
     <div class="tab">
-      <div class="tab-header">
-        <span>Affiliates</span>
-        <span>X</span>
-      </div>
+      <div class="tab-header"><span>Affiliates</span><span>X</span></div>
       <div class="tab-content">
-        <h4>Fellow Keeb Lovers!</h4>
         <p>Here are some great shops and stores to check out for more keeb goodness!</p>
         <div class="container">
           <div class="card" style="background-color: pink;">Dang Keebs</div>
@@ -276,13 +221,8 @@
         </div>
       </div>
     </div>
-
-    <!-- Chat Tab -->
     <div class="tab">
-      <div class="tab-header">
-        <span>Find Us!</span>
-        <span>X</span>
-      </div>
+      <div class="tab-header"><span>Find Us!</span><span>X</span></div>
       <div class="tab-content">
         <p>If you're up for a collab, looking for help, or just want a fellow keeb lover or coder — hit my inbox!</p>
         <p><a href="mailto:mochicakes.studio@gmail.com">Email Us!</a></p>
@@ -292,7 +232,6 @@
     </div>
   </div>
 
-  <!-- Custom Cursor Text -->
   <div class="cursor-text">owo?/</div>
 
   <script>
@@ -301,8 +240,13 @@
       cursorText.style.left = `${e.clientX + 10}px`;
       cursorText.style.top = `${e.clientY + 10}px`;
     });
+
+    function toggleTheme() {
+      document.body.classList.toggle('dark-mode');
+      const toggle = document.querySelector('.theme-toggle');
+      toggle.textContent = document.body.classList.contains('dark-mode') ? '🌙' : '🌞';
+    }
   </script>
 
-  
 </body>
 </html>
