@@ -12,19 +12,20 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
-    <!-- 🌸 Font Import -->
+  <!-- 🌸 Font Import -->
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono&display=swap" rel="stylesheet" />
 
   <!-- 🌸 CSS Styling-->
   <style>
- /* 🌈 Theme Variables */
-  :root {
+    /* 🌈 Theme Variables */
+    :root {
       --bg-light: linear-gradient(270deg, #FAC9D1, #F4E5C0, #E1EFCE, #c0c0c0);
       --bg-dark: linear-gradient(270deg, #000000, #2c2c2c, #6b6b6b, #575757);
       --text-light: white;
       --text-dark: #ccc;
     }
-      /* 🌈 Base Page Style */
+
+    /* 🌈 Base Page Style */
     body {
       font-family: 'DM Mono', monospace, sans-serif;
       color: var(--text-light);
@@ -37,7 +38,7 @@
       background: var(--bg-light);
       background-size: 800% 800%;
       animation: gradientFlow 12s ease infinite;
-      transition: background 0.5s ease;
+      transition: background 0.5s ease, color 0.5s ease;
     }
 
     /* 🌈 Background Animation */
@@ -47,11 +48,9 @@
       100% { background-position: 0% 50%; }
     }
 
-      /* 🌙 Dark Mode Theme */
+    /* 🌙 Dark Mode Theme */
     .dark-mode {
       background: #000000;
-      background-image: black;
-      background-size: 100px;
       color: var(--text-dark);
       position: relative;
       z-index: 0;
@@ -69,7 +68,7 @@
       margin: 10px 0 20px;
     }
 
-        /* 🌸 Decorative Divider */
+    /* 🌸 Decorative Divider */
     .page-border {
       border: 5px solid black;
       padding: 20px;
@@ -87,7 +86,7 @@
       gap: 20px;
     }
 
-     /* ✨ Text Scroll Animation */
+    /* ✨ Text Scroll Animation */
     .animation {
       height: 50px;
       overflow: hidden;
@@ -111,7 +110,7 @@
       90%, 100% { margin-top: 0; }
     }
 
-     /* 💻 Tabs Container */
+    /* 💻 Tabs Container */
     .desktop-container {
       width: 90%;
       max-width: 1200px;
@@ -177,7 +176,7 @@
       mix-blend-mode: difference;
     }
 
-      /* ☀️/🌙 Theme Toggle Button */
+    /* ☀️/🌙 Theme Toggle Button */
     .theme-toggle {
       position: fixed;
       top: 10px;
@@ -188,19 +187,51 @@
       cursor: pointer;
       z-index: 999;
       transition: transform 0.3s ease;
+      color: var(--text-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      padding: 0;
     }
-    .theme-toggle:hover { transform: rotate(20deg); }
+    .theme-toggle:hover {
+      transform: rotate(20deg);
+      color: #ffc0c8;
+    }
 
-    /* 🖼️ Logo Styling (if used as a background) */
-    .logo {
-      background-image: url("/assets/mochicakecode%20logo%20black.svg");
-      background-repeat: no-repeat;
-      background-size: contain;
+    .theme-toggle__simple {
+      width: 1.5em;
+      height: 1.5em;
+      fill: currentColor;
     }
   </style>
 </head>
 <body>
-  <button class="theme-toggle" onclick="toggleTheme()">🌞</button>
+  <!-- New Dark Theme Toggle Button -->
+  <button
+    class="theme-toggle"
+    type="button"
+    title="Toggle theme"
+    aria-label="Toggle theme"
+    onclick="toggleTheme()"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      aria-hidden="true"
+      class="theme-toggle__simple"
+      fill="currentColor"
+      viewBox="0 0 32 32"
+    >
+      <clipPath id="theme-toggle__simple__cutout">
+        <path d="M0-5h55v37h-55zm32 12a1 1 0 0025 0 1 1 0 00-25 0" />
+      </clipPath>
+      <g clip-path="url(#theme-toggle__simple__cutout)">
+        <circle cx="16" cy="16" r="15" />
+      </g>
+    </svg>
+  </button>
+
   <div class="page-border">
     <h1>Mochicake.Studio</h1>
     <div class="divider"></div>
@@ -233,7 +264,7 @@
       </div>
     </div>
     <div class="tab">
-      <div class="tab-header"><span>Current Sales</span><span>X</span></div>
+      <div class="tab-header"><spanCurrent Sales</span><span>X</span></div>
       <div class="tab-content">
         <p>Looking for the best deals on keycaps, accessories, and more!</p>
         <div class="container">
@@ -275,15 +306,21 @@
 
     function toggleTheme() {
       document.body.classList.toggle('dark-mode');
-      const toggle = document.querySelector('.theme-toggle');
-      toggle.textContent = document.body.classList.contains('dark-mode') ? '🌙' : '🌞';
+
+      // Save preference to localStorage for persistence
+      if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
     }
 
-    document.querySelectorAll('.tab-header').forEach(header => {
-      header.addEventListener('click', () => {
-        const content = header.nextElementSibling;
-        content.style.display = content.style.display === 'none' ? 'block' : 'none';
-      });
+    // Load theme preference on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+      }
     });
   </script>
 </body>
