@@ -1,153 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- 🌸 Meta + Title + Icons -->
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mochicake.Studio owo?/</title>
-
-  <!-- 🌸 Favicons -->
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-
-  <!-- 🌸 Manifest -->
-  <link rel="manifest" href="/site.webmanifest" />
-
-  <!-- 🌸 Font Import -->
-  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Sniglet:wght@400;800&display=swap"/>
-
-  <!-- 🌸 CSS Styling-->
-  <style>
-    /* 🌈 Theme Variables */
-    :root {
-      --bg-light: linear-gradient(270deg, #FAC9D1, #F4E5C0, #E1EFCE, #c0c0c0);
-      --bg-dark: linear-gradient(270deg, #000000, #2c2c2c, #6b6b6b, #575757);
-      --text-light: white;
-      --text-dark: #ffffff;
-    }
-
-    /* 🌈 Base Page Style */
-    body {
-      font-family: 'Fredoka';
-      color: var(--text-light);
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-height: 100vh;
-      background: var(--bg-light);
-      background-size: 800% 800%;
-      animation: gradientFlow 12s ease infinite;
-      transition: background 0.5s ease, color 0.5s ease;
-    }
-
-    /* 🌈 Background Animation */
-    @keyframes gradientFlow {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-
-    /* 🌸 Typography + Links */
-    h1 { color: #ffc0c8; margin-bottom: 0; }
-    a { color: #DFEFDB; text-decoration: none; }
-    a:hover { color: rgb(127, 193, 255); }
-    .divider {
-      width: 150px;
-      height: 4px;
-      background: linear-gradient(to right, #FAC9D1, #F4E5C0, #E1EFCE, #c0c0c0);
-      border-radius: 10px;
-      margin: 10px 0 20px;
-    }
-
-    /* 🌸 Decorative Divider */
-    .page-border {
-      border: 5px solid black;
-      padding: 20px;
-      margin: 20px auto;
-      max-width: 900px;
-      background-color: black;
-      border-radius: 30px;
-    }
-
-    /* 🧁 Content Flex Layout */
-    .container {
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-
-    /* ✨ Text Scroll Animation */
-    .animation {
-      height: 50px;
-      overflow: hidden;
-      margin-left: 1rem;
-    }
-    .animation > div > div {
-      padding: 0.25rem 0.75rem;
-      height: 2.81rem;
-      margin-bottom: 2.81rem;
-      display: inline-block;
-    }
-    .animation div:first-child { animation: text-animation 8s infinite; }
-    .first div { background-color: #add8e6; }
-    .second div { background-color: #f4e5c0; }
-    .third div { background-color: #fac9d1; }
-    @keyframes text-animation {
-      0%, 10% { margin-top: 0; }
-      20%, 30% { margin-top: -5.62rem; }
-      40%, 60% { margin-top: -11.24rem; }
-      70%, 80% { margin-top: -5.62rem; }
-      90%, 100% { margin-top: 0; }
-    }
-
-
-    /* 🍡 Floating Cursor Text */
-    .cursor-text {
-      position: fixed;
-      pointer-events: none;
-      font-size: 20px;
-      color: white;
-      transform: scaleX(-1);
-      z-index: 9999;
-      mix-blend-mode: difference;
-    }
-    
-  </style>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Mochicake Studio</title>
+	<link rel="stylesheet" href="style.css" /> <!-- CSS goes here in the head -->
 </head>
 <body>
+	<header class="header">
+		<h1>Header</h1>
+	</header>
 
-  <div class="page-border">
-    <h1>Mochicake.Studio</h1>
-    <div class="divider"></div>
-    <main class="container">
-      <p>Hello 👋 I'm Emiko Mochi, I'm currently ....</p>
-      <section class="animation">
-        <div class="first"><div>Learning Front-End Magic</div></div>
-        <div class="second"><div>Crafting Artisan Keycaps</div></div>
-        <div class="third"><div>Spoiling my code with pastel</div></div>
-      </section>
-    </main>
-    <p>
-      Welcome to my personal website! I'm a junior front-end developer with a passion for creating beautiful
-      and functional web experiences. I also enjoy crafting artisan products and exploring the world of mechanical 
-      keyboards—from the small characters that sit on your keyboard to whimsical cases that add a talking piece to your desk!
-      Feel free to reach out if you'd like to collaborate or just chat!
-    </p>
-  </div>
+	<nav class="sticky navbar">
+		<div class="brand display__logo">
+			<a href="#top" class="nav__link">
+				<img src="assets/mochicakecode knife.png" alt="Mochi Logo" class="logo" style="height: 2.5rem; vertical-align: middle;" />
+				<span class="brand__text">MochiCake.Studio</span>
+			</a>
+		</div>
 
-  <div class="cursor-text">owo?/</div>
+		<input type="checkbox" id="nav" class="hidden" />
+		<label for="nav" class="nav__open"><i></i><i></i><i></i></label>
+		<div class="nav">
+			<ul class="nav__items">
+				<li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
+				<li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+				<li class="nav__item"><a href="#portfolio" class="nav__link">Portfolio</a></li>
+				<li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
+			</ul>
+		</div>
+	</nav>
 
-  <script>
-    const cursorText = document.querySelector('.cursor-text');
-    document.addEventListener('mousemove', (e) => {
-      cursorText.style.left = `${e.clientX + 10}px`;
-      cursorText.style.top = `${e.clientY + 10}px`;
-    });
+	<main>
+		<section class="home">
+			<div id="home">
+				<h1>Home</h1>
+			</div>
+		</section>
+		<section class="about">
+			<div id="about">
+				<h1>About</h1>
+			</div>
+		</section>
+		<section class="portfolio">
+			<div id="portfolio">
+				<h1>Portfolio</h1>
+			</div>
+		</section>
+		<section class="contact">
+			<div id="contact">
+				<h1>Contact</h1>
+			</div>
+		</section>
+	</main>
 
-  </script>
+	<footer class="footer">
+		<h1>Footer</h1>
+	</footer>
+
+	<script>
+function toggleTheme() {
+  document.body.classList.toggle('dark-theme');
+}
+</script>
 </body>
 </html>
