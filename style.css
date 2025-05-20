@@ -33,6 +33,16 @@ body {
 	position: relative;
 }
 
+.header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100vh;
+	background-color: var(--primary);
+	position: relative;
+}
+
 .header h1,
 .home h1,
 .about h1,
@@ -65,8 +75,16 @@ body {
 	background-color: var(--primary);
 }
 
-.header {
-	background-color: var(--primary);
+.header__knife {
+	height: 3rem;
+	display: block;
+	margin: 0 auto 1rem auto;
+}
+
+.header h1 {
+	position: static;
+	margin: 0;
+	color: var(--shades);
 }
 
 .navbar {
@@ -187,6 +205,14 @@ body {
 	margin: 0;
 	padding: 0;
 	display: block;
+}
+
+.header__knife {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 2rem;
+	margin-bottom: 1rem;
 }
 
 @media (min-width: 800px) {
