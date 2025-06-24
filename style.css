@@ -1,13 +1,31 @@
+/*
+====================================
+ Mochicake.Studio Main Stylesheet
+------------------------------------
+- Animated ombre background
+- Custom knife cursor
+- Splash screen
+- Marquee (scrolling banner)
+- Desktop bar, start menu, popups
+- Responsive layout
+====================================
+*/
+
 :root {
-	--primary: rgba(37, 37, 37, 1.0);
-	--secondary: #fac9d1;
-	--shades: rgba(238, 238, 238, 1.0);
+	--primary: rgba(37, 37, 37, 1.0); /* Main dark color */
+	--secondary: #fac9d1; /* Accent color */
+	--shades: rgba(238, 238, 238, 1.0); /* Light shade */
 }
 
 * {
 	scroll-behavior: smooth;
 }
 
+/*
+------------------------------------
+ Animated Background & Body
+------------------------------------
+*/
 body {
 	/* Animated ombre background: red, yellow, green, blue */
 	background: linear-gradient(135deg, #FFC0C8, #F4E5C0, #E1EFCE, #C0E0EC 100%);
@@ -23,6 +41,11 @@ body {
 	cursor: none;
 }
 
+/*
+------------------------------------
+ Custom Knife Cursor
+------------------------------------
+*/
 body::after {
 	content: '';
 	position: fixed;
@@ -60,6 +83,11 @@ body.sparkle-cursor::after {
 	}
 }
 
+/*
+------------------------------------
+ Splash Screen Styles
+------------------------------------
+*/
 .splash-screen {
 	position: fixed;
 	top: 0;
@@ -108,6 +136,11 @@ body.sparkle-cursor::after {
 	border-radius: 12px;
 }
 
+/*
+------------------------------------
+ Button & Form Element Styles
+------------------------------------
+*/
 button,
 .start-btn,
 .bar-app,
@@ -131,6 +164,11 @@ textarea {
 	display: none;
 }
 
+/*
+------------------------------------
+ Window & Popup Styles
+------------------------------------
+*/
 .window {
 	width: 600px;
 	margin: 50px auto;
@@ -166,6 +204,11 @@ textarea {
 	font-size: 18px;
 }
 
+/*
+------------------------------------
+ Top Navigation (legacy, not used in desktop bar)
+------------------------------------
+*/
 .nav {
 	background-color: #ADADAD;
 	padding: 10px;
@@ -178,6 +221,11 @@ textarea {
 	margin: 0 10px;
 }
 
+/*
+------------------------------------
+ Marquee (Scrolling Banner)
+------------------------------------
+*/
 .marquee {
 	background-color: #000;
 	color: #FFC0C8;
@@ -191,7 +239,7 @@ textarea {
 .marquee span {
 	display: inline-block;
 	padding-left: 100%;
-	animation: scroll 12s linear infinite;
+	animation: scroll 15.5s linear infinite;
 }
 
 @keyframes scroll {
@@ -203,7 +251,11 @@ textarea {
 	}
 }
 
-/* --- Desktop Start Menu Bar Styles --- */
+/*
+------------------------------------
+ Desktop Bar (Start Menu, Nav, Clock)
+------------------------------------
+*/
 .desktop-bar {
 	position: fixed;
 	left: 0;
@@ -293,7 +345,11 @@ textarea {
 	}
 }
 
-/* Popup Window Styles */
+/*
+------------------------------------
+ Popup Window Styles (for draggable popups)
+------------------------------------
+*/
 #popup-window {
 	position: fixed;
 	top: 20%;
@@ -309,6 +365,11 @@ textarea {
 	display: none !important;
 }
 
+/*
+------------------------------------
+ Section Layouts (Header, Home, About, etc.)
+------------------------------------
+*/
 .header,
 .home,
 .about,
@@ -380,6 +441,11 @@ textarea {
 	color: var(--shades);
 }
 
+/*
+------------------------------------
+ Navbar & Brand Styles
+------------------------------------
+*/
 .navbar {
 	padding-top: .5em;
 	padding-bottom: .5em;

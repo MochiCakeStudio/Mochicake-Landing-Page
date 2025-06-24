@@ -1,4 +1,6 @@
+// --- Splash Screen Enter Button Handler ---
 function enterSite() {
+  // Play entry sound and hide splash, show main content
   const sound = document.getElementById('enter-sound');
   sound.currentTime = 0;
   sound.play();
@@ -6,8 +8,10 @@ function enterSite() {
   document.getElementById('main-content').classList.remove('hidden');
 }
 
+// --- Main DOMContentLoaded Handler ---
 document.addEventListener('DOMContentLoaded', function() {
   const body = document.body;
+  // --- Custom Knife Cursor Tracking ---
   document.addEventListener('mousemove', function(e) {
     body.classList.add('custom-cursor-active');
     body.style.setProperty('--cursor-x', e.clientX + 'px');
@@ -22,12 +26,16 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     styleTag.textContent = `body::after { transform: var(--cursor-transform, scaleX(-1) translate(-16px, -16px)); left: 0; top: 0; }`;
   });
+
+  // --- Interactive Elements: Pointer Cursor ---
   // Remove sparkle cursor on hover, revert to pointer
   const sparkleTargets = document.querySelectorAll('button, .bar-app, .start-btn, .title-bar-buttons span');
   sparkleTargets.forEach(el => {
     el.addEventListener('mouseenter', () => { body.classList.remove('sparkle-cursor'); body.style.cursor = 'pointer'; });
     el.addEventListener('mouseleave', () => { body.style.cursor = 'none'; });
   });
+
+  // --- Audio Feedback for Navigation Buttons ---
   // Play audio for 0.01s on Home, About, Projects, Guestbook click
   const navButtons = document.querySelectorAll('.bar-app');
   const sound = document.getElementById('enter-sound');
@@ -40,7 +48,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   });
-  // Pop up windows on nav click
+
+  // --- Pop-up Window Logic for Desktop Bar Apps ---
+  // Each nav button opens/closes its own draggable popup window
   const popups = {
     Home: {
       btn: document.querySelector('.bar-app:nth-child(1)'),
@@ -73,10 +83,12 @@ document.addEventListener('DOMContentLoaded', function() {
   };
   Object.values(popups).forEach(({btn, popup, close, titleBar, color}) => {
     if (btn && popup && close && titleBar) {
+      // --- Highlight nav button when popup is open ---
       function setActive(active) {
         btn.style.background = active ? color : '#fff';
         btn.style.color = '#000';
       }
+      // --- Toggle popup open/close on nav button click ---
       btn.addEventListener('click', function(e) {
         // Toggle this popup only
         const isOpen = !popup.classList.contains('hidden');
@@ -88,11 +100,12 @@ document.addEventListener('DOMContentLoaded', function() {
           setActive(true);
         }
       });
+      // --- Close popup on close button click ---
       close.addEventListener('click', function() {
         popup.classList.add('hidden');
         setActive(false);
       });
-      // Draggable
+      // --- Draggable Popup Window Logic ---
       let isDragging = false, offsetX = 0, offsetY = 0, startX = 0, startY = 0;
       titleBar.addEventListener('mousedown', function(e) {
         isDragging = true;

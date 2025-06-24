@@ -4,16 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mochicake.Studio</title>
- <link href="https://fonts.googleapis.com/css2?family=Dongle&family=VT323&display=swap" rel="stylesheet">
+  <!-- Google Fonts for Dongle and VT323 -->
+  <link href="https://fonts.googleapis.com/css2?family=Dongle&family=VT323&display=swap" rel="stylesheet">
+  <!-- Main CSS -->
   <link rel="stylesheet" href="style.css">
+  <!-- Favicon -->
+  <link rel="icon" href="assets/favicon.ico">
 </head>
 <body>
 
+  <!-- Audio: Navigation/Splash Sound Effect -->
   <audio id="enter-sound" src="welcome-chime.mp3" preload="auto"></audio>
 
+  <!-- Splash Screen (ASCII art + Enter button) -->
   <div id="splash" class="splash-screen">
     <div class="ascii-art">
       <span>
+        <!-- Mochicake ASCII Art Logo -->
                          __                           __                 ____    __                __                
  /'\_/`\                /\ \      __                 /\ \               /\  _`\ /\ \__            /\ \  __           
 /\      \    ___     ___\ \ \___ /\_\    ___     __  \ \ '\      __   \ \,\L\_\ \ ,_\  __  __   \_\ \/\_\    ___   
@@ -23,15 +30,17 @@
    \/_/ \/_/\/___/  \/____/ \/_/\/_/\/_/\/____/\/__/\/_/ \/_/\/_/\/____/\/_/\/_____/\/__/ \/___/  \/__,_ /\/_/\/___/ 
       </span>
     </div>
-
     <button onclick="enterSite()">E n t e r</button>
   </div>
 
+  <!-- Main Content (hidden until splash is dismissed) -->
   <div id="main-content" class="hidden">
+    <!-- Marquee: Scrolling Banner -->
     <div class="marquee">
       <span> owo?/ Welcome to my site! I am currently: Still building it and slightly frustrated but we'll get there eventually, wish me luck! </span>
     </div>
 
+    <!-- Main Welcome Window -->
     <div class="window">
       <div class="title-bar">
         <span>Mochicake.exe</span>
@@ -44,10 +53,12 @@
         <p>Explore my projects, dive into my brain, or leave a cute note in the guestbook.</p>
       </div>
     </div>
-    <!-- Desktop Start Menu Bar (now only inside #main-content) -->
+    <!-- Desktop Start Menu Bar (bottom navigation) -->
     <div class="desktop-bar">
+      <!-- Start Button with Heart SVG -->
       <button class="start-btn" style="display: flex; align-items: center; gap: 8px;">
         <span class="start-icon" style="width: 24px; height: 24px; display: flex; align-items: center;">
+          <!-- Heart SVG Icon -->
           <svg fill="#ff698a" viewBox="0 0 475.528 475.528" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
             <g>
               <g>
@@ -60,16 +71,18 @@
         </span>
         <span style="display: flex; align-items: center;">Start</span>
       </button>
+      <!-- Navigation Buttons (open popups) -->
       <div class="desktop-bar-apps">
         <span class="bar-app">Home</span>
         <span class="bar-app">About</span>
         <span class="bar-app">Projects</span>
         <span class="bar-app">Guestbook</span>
       </div>
+      <!-- Live Clock -->
       <span class="desktop-bar-clock" id="desktopClock"></span>
     </div>
 
-    <!-- Popup Windows -->
+    <!-- Popup Windows (draggable, open/close independently) -->
     <div id="popup-window-home" class="window hidden" style="position: fixed; top: 20%; left: 50%; transform: translate(-50%, 0); z-index: 20000; min-width: 320px; max-width: 90vw; cursor: grab;">
       <div class="title-bar" id="popup-title-bar-home" style="cursor: grab;">
         <span>Welcome Home!</span>
@@ -115,6 +128,7 @@
       </div>
     </div>
   </div>
+  <!-- Main JS -->
   <script src="main.js"></script>
 </body>
 </html>
