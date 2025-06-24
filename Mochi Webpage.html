@@ -17,6 +17,27 @@
       color: black;
       margin: 0;
       padding: 0;
+      /* Hide default cursor, use pseudo for flipped knife */
+      cursor: none;
+    }
+    body::after {
+      content: '';
+      position: fixed;
+      left: 0; top: 0;
+      width: 32px; height: 32px;
+      pointer-events: none;
+      z-index: 99999;
+      background: url('assets/mochicakecode knife.png') no-repeat 0 0/contain;
+      transform: scaleX(-1) translate(-16px, -16px);
+      display: none;
+      /* Add dynamic position */
+      will-change: transform;
+    }
+    body.custom-cursor-active::after {
+      display: block;
+    }
+    body.sparkle-cursor::after {
+      background: url('assets/knife sparkle duotone.svg') no-repeat 0 0/contain !important;
     }
 
     @keyframes gradientBG {
@@ -80,11 +101,12 @@
       border-radius: 12px;
     }
 
-    button, .start-btn, .bar-app, .title-bar-buttons span {
+    button, .start-btn, .bar-app, .title-bar-buttons span, a, input, select, textarea {
       border-radius: 16px !important;
       background: #fff !important;
       color: black;
-      border: 1px solid #b9d5de;
+      border: none !important;
+      cursor: none !important;
     }
 
     .splash-screen button:active {
@@ -278,7 +300,7 @@
 
   <div id="main-content" class="hidden">
     <div class="marquee">
-      <span> owo?/ Welcome to my site! Add something to my guestbook! </span>
+      <span> owo?/ Welcome to my site! I am currently: Still building it and slightly frustrated but we'll get there eventually, wish me luck! </span>
     </div>
 
     <div class="window">
@@ -296,7 +318,17 @@
     <!-- Desktop Start Menu Bar (now only inside #main-content) -->
     <div class="desktop-bar">
       <button class="start-btn" style="display: flex; align-items: center; gap: 8px;">
-        <span class="start-icon" style="font-size: 24px; line-height: 1; display: flex; align-items: center;">❤️</span>
+        <span class="start-icon" style="width: 24px; height: 24px; display: flex; align-items: center;">
+          <svg fill="#ff698a" viewBox="0 0 475.528 475.528" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <g>
+              <g>
+                <path d="M237.376,436.245l0.774,0.976c210.94-85.154,292.221-282.553,199.331-367.706
+                  c-92.899-85.154-199.331,30.953-199.331,30.953h-0.774c0,0-106.44-116.107-199.331-30.953
+                  C-54.844,154.658,26.437,351.092,237.376,436.245z"/>
+              </g>
+            </g>
+          </svg>
+        </span>
         <span style="display: flex; align-items: center;">Start</span>
       </button>
       <div class="desktop-bar-apps">
@@ -317,6 +349,31 @@
       document.getElementById('main-content').classList.remove('hidden');
     }
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const body = document.body;
+      document.addEventListener('mousemove', function(e) {
+        body.classList.add('custom-cursor-active');
+        body.style.setProperty('--cursor-x', e.clientX + 'px');
+        body.style.setProperty('--cursor-y', e.clientY + 'px');
+        body.style.setProperty('--cursor-transform', `translate(${e.clientX - 16}px, ${e.clientY - 16}px) scaleX(-1)`);
+        body.style.cursor = 'none';
+        let styleTag = document.getElementById('custom-cursor-style');
+        if (!styleTag) {
+          styleTag = document.createElement('style');
+          styleTag.id = 'custom-cursor-style';
+          document.head.appendChild(styleTag);
+        }
+        styleTag.textContent = `body::after { transform: var(--cursor-transform, scaleX(-1) translate(-16px, -16px)); left: 0; top: 0; }`;
+      });
+      // Add sparkle cursor on hover
+      const sparkleTargets = document.querySelectorAll('button, .bar-app, .start-btn, .title-bar-buttons span');
+      sparkleTargets.forEach(el => {
+        el.addEventListener('mouseenter', () => body.classList.add('sparkle-cursor'));
+        el.addEventListener('mouseleave', () => body.classList.remove('sparkle-cursor'));
+      });
+    });
+    </script>
 
 </body>
 </html>

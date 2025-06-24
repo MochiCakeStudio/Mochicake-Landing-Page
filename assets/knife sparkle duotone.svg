@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
+
+<svg
+   fill="#000000"
+   width="800px"
+   height="800px"
+   viewBox="0 0 256 256"
+   id="Flat"
+   version="1.1"
+   sodipodi:docname="knife sparkle duotone.svg"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="namedview2"
+     pagecolor="#505050"
+     bordercolor="#eeeeee"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#505050"
+     inkscape:zoom="1.00875"
+     inkscape:cx="546.22057"
+     inkscape:cy="373.2342"
+     inkscape:window-width="1680"
+     inkscape:window-height="987"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g5951"
+     inkscape:pageshadow="2"
+     showgrid="false" />
+  <path
+     d="m 212.87125,38.18125 -108.915,106.295 23.30188,23.30188 c 0.15234,0.13866 0.30049,0.2851 0.44437,0.43875 l 0.0763,0.0819 18.82625,18.825 A 225.51045,225.51045 0 0 0 184.73625,144.02 c 23.23145,-34.47071 32.66523,-69.99988 28.135,-105.83875 z"
+     style="fill:#ffffff;fill-opacity:1"
+     id="path6" />
+  <path
+     d="m 216.15062,14.153125 a 8,8 0 0 0 -3.65499,2.038125 L 34.3525,190.04875 a 28.05536,28.05536 0 0 0 -0.06938,39.66688 28.03445,28.03445 0 0 0 39.5025,0.0975 l 47.903125,-44.97751 18.7375,18.73813 a 8.00114,8.00114 0 0 0 10.45687,0.74312 c 1.02344,-0.76854 25.31922,-19.16863 46.82313,-50.91374 21.30566,-31.45114 32.174,-64.90723 32.175,-98.32813 a 155.06019,155.06019 0 0 0 -4.00313,-34.956875 8,8 0 0 0 -9.7275,-5.965 z m -3.27937,24.028125 c 4.53023,35.83887 -4.90355,71.36804 -28.135,105.83875 A 225.51045,225.51045 0 0 1 146.605,187.12375 l -18.82625,-18.825 -0.0763,-0.0819 c -0.14388,-0.15365 -0.29203,-0.30009 -0.44437,-0.43875 L 103.95625,144.47625 Z M 92.505,155.65187 110.36938,173.51625 62.75,218.2275 c -0.06152,0.0576 -0.122025,0.11477 -0.180625,0.17438 a 12.00079,12.00079 0 1 1 -16.97125,-16.97126 z"
+     style=""
+     id="path5" />
+  <path
+     d="m 92.505,155.65187 -46.906875,45.77875 a 12.00079,12.00079 0 1 0 16.97125,16.97126 c 0.0586,-0.0596 0.119105,-0.11677 0.180625,-0.17438 l 47.61938,-44.71125 z"
+     style="fill:#fac9d1;fill-opacity:1"
+     id="path4" />
+  <g
+     id="g5956">
+    <g
+       id="g5951"
+       transform="translate(-7.8509004,-94.837989)">
+      <path
+         id="path3133-6"
+         style="opacity:1;stroke-width:5.92832;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke;stroke:#000000;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+         inkscape:transform-center-x="0.13298608"
+         inkscape:transform-center-y="8.0068473"
+         d="m 234.63732,192.51074 -8.16485,-20.99867 -14.70851,-11.31028 14.52044,-11.80758 7.82099,-21.27065 8.16485,20.99868 14.70851,11.31029 -14.52044,11.80757 z" />
+      <path
+         id="path3133-6-8"
+         style="opacity:1;fill:#ffdc00;stroke-width:4.53323;stroke-linecap:round;stroke-linejoin:round;paint-order:markers fill stroke;fill-opacity:1"
+         inkscape:transform-center-x="0.078121611"
+         inkscape:transform-center-y="4.5473205"
+         d="m 234.5276,178.38476 -4.79648,-11.92574 -8.64057,-6.42343 8.53009,-6.70585 4.59447,-12.0802 4.79647,11.92574 8.64057,6.42343 -8.53009,6.70585 z" />
+    </g>
+  </g>
+</svg>
