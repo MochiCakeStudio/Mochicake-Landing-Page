@@ -9,11 +9,304 @@
 }
 
 body {
-	font-family: 'Sniglet', cursive;
-	line-height: 1.6;
+	/* Animated ombre background: red, yellow, green, blue */
+	background: linear-gradient(135deg, #FFC0C8, #F4E5C0, #E1EFCE, #C0E0EC 100%);
+	background-size: 400% 400%;
+	animation: gradientBG 18s ease-in-out infinite;
+	min-height: 100vh;
+	background-attachment: fixed;
+	font-family: 'dongle', monospace;
+	color: black;
 	margin: 0;
-	background: linear-gradient(to bottom, #FAC9D1, #F4E5C0, #E1EFCE, #C0E0EC);
-	color: #222;
+	padding: 0;
+	/* Hide default cursor, use pseudo for flipped knife */
+	cursor: none;
+}
+
+body::after {
+	content: '';
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 32px;
+	height: 32px;
+	pointer-events: none;
+	z-index: 99999;
+	background: url('assets/mochicakecode knife.png') no-repeat 0 0/contain;
+	transform: scaleX(-1) translate(-16px, -16px);
+	display: none;
+	/* Add dynamic position */
+	will-change: transform;
+}
+
+body.custom-cursor-active::after {
+	display: block;
+}
+
+body.sparkle-cursor::after {
+	/* Remove sparkle cursor, revert to default pointer */
+	background: url('assets/mochicakecode knife.png') no-repeat 0 0/contain !important;
+}
+
+@keyframes gradientBG {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.splash-screen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #000000;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	z-index: 9999;
+	font-size: 16px;
+	text-align: center;
+	white-space: pre;
+	font-family: monospace;
+}
+
+.ascii-art span {
+	display: inline-block;
+	background: linear-gradient(90deg,#fff ,#FFC0C8, #ff698a, #FFC0C8, #fff);
+	background-size: 200% auto;
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: shimmer 10s linear infinite;
+}
+
+@keyframes shimmer {
+	0% {
+		background-position: 200% center;
+	}
+	100% {
+		background-position: -200% center;
+	}
+}
+
+.splash-screen button {
+	margin-top: 20px;
+	padding: 10px 20px;
+	font-family: 'dongle', monospace;
+	font-size: 18px;
+	background-color: #ff698a;
+	cursor: pointer;
+	border-radius: 12px;
+}
+
+button,
+.start-btn,
+.bar-app,
+.title-bar-buttons span,
+a,
+input,
+select,
+textarea {
+	border-radius: 16px !important;
+	background: #fff !important;
+	color: black;
+	border: none !important;
+	cursor: none !important;
+}
+
+.splash-screen button:active {
+	border: 2px inset #fff;
+}
+
+.hidden {
+	display: none;
+}
+
+.window {
+	width: 600px;
+	margin: 50px auto;
+	border: 3px solid #000;
+	box-shadow: 3px 3px 0px #ADADAD;
+	background-color: #ffffff;
+	border-radius: 12px;
+}
+
+.title-bar {
+	background: linear-gradient(to right, #FFC0C8, #FFC0C8);
+	color: white;
+	padding: 5px 10px;
+	font-weight: bold;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-radius: 12px;
+}
+
+.title-bar-buttons span {
+	background: #fff;
+	color: black;
+	padding: 0 6px;
+	margin-left: 4px;
+	border: 1px solid #000;
+	cursor: pointer;
+	border-radius: 16px;
+}
+
+.content {
+	padding: 15px;
+	font-size: 18px;
+}
+
+.nav {
+	background-color: #ADADAD;
+	padding: 10px;
+	text-align: center;
+}
+
+.nav a {
+	color: #B9D5DE;
+	text-decoration: underline;
+	margin: 0 10px;
+}
+
+.marquee {
+	background-color: #000;
+	color: #FFC0C8;
+	font-size: 16px;
+	padding: 5px;
+	overflow: hidden;
+	white-space: nowrap;
+	box-sizing: border-box;
+}
+
+.marquee span {
+	display: inline-block;
+	padding-left: 100%;
+	animation: scroll 12s linear infinite;
+}
+
+@keyframes scroll {
+	0% {
+		transform: translateX(0%);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+/* --- Desktop Start Menu Bar Styles --- */
+.desktop-bar {
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100vw;
+	height: 48px;
+	background: solid (#000000);
+	border-top: 2px solid #888;
+	display: flex;
+	align-items: center;
+	z-index: 10000;
+	box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.08);
+	font-family: 'dongle', monospace;
+	font-size: 20px;
+	user-select: none;
+}
+
+.start-btn {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	background: #fff;
+	border: 2px outset #b9d5de;
+	border-radius: 8px;
+	margin-left: 12px;
+	padding: 4px 18px 4px 10px;
+	font-size: 20px;
+	cursor: pointer;
+	font-family: 'dongle', monospace;
+	transition: background 0.2s;
+	box-shadow: 1px 1px 0 #b9d5de;
+}
+
+.start-btn:active {
+	border: 2px inset #b9d5de;
+	background: #e0e0e0;
+}
+
+.start-icon {
+	width: 24px;
+	height: 24px;
+	margin-right: 8px;
+	vertical-align: middle;
+}
+
+.desktop-bar-apps {
+	display: flex;
+	gap: 18px;
+	margin-left: 32px;
+	flex: 1;
+}
+
+.bar-app {
+	background: #fff;
+	border: 1px solid #b9d5de;
+	border-radius: 16px;
+	padding: 4px 14px;
+	margin-right: 4px;
+	font-size: 18px;
+	cursor: pointer;
+	transition: background 0.2s;
+}
+
+.bar-app:hover {
+	background: #ffc0c8;
+	color: #000;
+}
+
+.desktop-bar-clock {
+	margin-right: 24px;
+	margin-left: auto;
+	font-size: 18px;
+	color: #333;
+	font-family: 'dongle', monospace;
+	letter-spacing: 1px;
+}
+
+@media (max-width: 700px) {
+	.desktop-bar-apps {
+		display: none;
+	}
+	.desktop-bar {
+		font-size: 16px;
+	}
+	.desktop-bar-clock {
+		font-size: 14px;
+	}
+}
+
+/* Popup Window Styles */
+#popup-window {
+	position: fixed;
+	top: 20%;
+	left: 50%;
+	transform: translate(-50%, 0);
+	z-index: 20000;
+	min-width: 320px;
+	max-width: 90vw;
+	cursor: grab;
+}
+/* Remove/minimize bar styles for popup window */
+#popup-window.minimized {
+	display: none !important;
 }
 
 .header,
