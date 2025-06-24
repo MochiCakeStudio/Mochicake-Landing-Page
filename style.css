@@ -38,7 +38,7 @@ body {
 	margin: 0;
 	padding: 0;
 	/* Hide default cursor, use pseudo for flipped knife */
-	cursor: none;
+	cursor: default;
 }
 
 /*
@@ -52,7 +52,7 @@ body::after {
 	left: 0;
 	top: 0;
 	width: 32px;
-	height: 32px;
+	height:
 	pointer-events: none;
 	z-index: 99999;
 	background: url('assets/mochicakecode knife.png') no-repeat 0 0/contain;
@@ -153,7 +153,16 @@ textarea {
 	background: #fff !important;
 	color: black;
 	border: none !important;
-	cursor: none !important;
+	cursor: pointer !important; /* Changed from 'none' to 'pointer' for all interactive elements */
+}
+
+.start-btn,
+.bar-app {
+  padding: 10px 28px !important; /* Increase clickable area horizontally */
+  min-height: 44px; /* Minimum recommended touch target height */
+  min-width: 44px;  /* Minimum recommended touch target width */
+  font-size: 22px;
+  line-height: 1.2;
 }
 
 .splash-screen button:active {
@@ -262,8 +271,8 @@ textarea {
 	bottom: 0;
 	width: 100vw;
 	height: 48px;
-	background: solid (#000000);
-	border-top: 2px solid #888;
+	background: #000; /* Fixed: was 'solid (#000000)' which is invalid, should be a color value */
+	border-top: 2px solid #b9d5de; /* Fixed: was #000, should match the rest of the theme */
 	display: flex;
 	align-items: center;
 	z-index: 10000;
@@ -309,19 +318,31 @@ textarea {
 }
 
 .bar-app {
-	background: #fff;
-	border: 1px solid #b9d5de;
-	border-radius: 16px;
-	padding: 4px 14px;
-	margin-right: 4px;
-	font-size: 18px;
-	cursor: pointer;
-	transition: background 0.2s;
+  background: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  margin: 0 8px 0 0;
+  padding: 0 6px;
+  font-size: 20px;
+  color: #fff !important; /* Always white text */
+  cursor: pointer;
+  min-width: unset;
+  min-height: unset;
+  box-shadow: none;
+  transition: color 0.15s;
 }
 
 .bar-app:hover {
-	background: #ffc0c8;
-	color: #000;
+  color: #ff698a !important; /* Pink on hover */
+  background: none !important;
+}
+
+.bar-separator {
+  color: #b9d5de;
+  font-size: 22px;
+  margin: 0 2px;
+  user-select: none;
+  pointer-events: none;
 }
 
 .desktop-bar-clock {
@@ -725,4 +746,54 @@ textarea {
 #nav:checked~.nav ul li a {
 	opacity: 1;
 	transform: translateY(0);
+}
+
+/*
+------------------------------------
+ Start Menu Drawer Styles
+------------------------------------
+*/
+.start-menu-drawer {
+  position: absolute;
+  left: 12px;
+  bottom: 56px;
+  min-width: 180px;
+  background: #fff;
+  border: 2px solid #b9d5de;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+  z-index: 11000;
+  padding: 12px 0 8px 0;
+  font-family: 'dongle', monospace;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.start-menu-drawer ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.start-menu-drawer li {
+  margin: 0;
+  padding: 0;
+}
+.start-menu-drawer a {
+  display: block;
+  padding: 10px 24px;
+  color: #333;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.15s;
+  font-size: 20px;
+}
+.start-menu-drawer a:hover {
+  background: #C0E0EC; /* Light blue from theme */
+  color: #000;
+}
+
+/* Hide by default, show when not .hidden */
+.start-menu-drawer.hidden {
+  display: none;
 }

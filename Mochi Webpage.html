@@ -56,10 +56,10 @@
     <!-- Desktop Start Menu Bar (bottom navigation) -->
     <div class="desktop-bar">
       <!-- Start Button with Heart SVG -->
-      <button class="start-btn" style="display: flex; align-items: center; gap: 8px;">
-        <span class="start-icon" style="width: 24px; height: 24px; display: flex; align-items: center;">
+      <button class="start-btn" id="startBtn">
+        <span class="start-icon">
           <!-- Heart SVG Icon -->
-          <svg fill="#ff698a" viewBox="0 0 475.528 475.528" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+          <svg fill="#fac9d1" viewBox="0 0 475.528 475.528" width="24" height="24" xmlns="http://www.w3.org/2000/svg">
             <g>
               <g>
                 <path d="M237.376,436.245l0.774,0.976c210.94-85.154,292.221-282.553,199.331-367.706
@@ -69,13 +69,25 @@
             </g>
           </svg>
         </span>
-        <span style="display: flex; align-items: center;">Start</span>
+        <span>Start</span>
       </button>
+      <!-- Start Menu Drawer -->
+      <div id="startMenuDrawer" class="start-menu-drawer hidden">
+        <ul>
+          <li><a href="#" class="start-link">.Keeb</a></li>
+          <li><a href="https://youtube.com/" target="_blank" class="start-link">.Youtube</a></li>
+          <li><a href="https://discord.com/" target="_blank" class="start-link">.Discord</a></li>
+          <li><a href="https://instagram.com/" target="_blank" class="start-link">.Instagram</a></li>
+        </ul>
+      </div>
       <!-- Navigation Buttons (open popups) -->
-      <div class="desktop-bar-apps">
+      <div class="desktop-bar-apps nav-links-inline">
         <span class="bar-app">Home</span>
+        <span class="bar-separator">|</span>
         <span class="bar-app">About</span>
+        <span class="bar-separator">|</span>
         <span class="bar-app">Projects</span>
+        <span class="bar-separator">|</span>
         <span class="bar-app">Guestbook</span>
       </div>
       <!-- Live Clock -->
@@ -102,7 +114,13 @@
         </div>
       </div>
       <div class="content">
-        <p>This is the About popup!<br>Write something about yourself or the site here.</p>
+        <p>Hello there! I'm Emiko (Mochi) Keiko, a web dev! I enjoy <br>
+          <ul>
+            <li>Coding</li>
+            <li>Making artisan keycaps </li>
+            <li>3D printing silly things</li>
+            <li>& creating cute stuff!</li>
+          </ul></p>
       </div>
     </div>
     <div id="popup-window-projects" class="window hidden" style="position: fixed; top: 28%; left: 58%; transform: translate(-50%, 0); z-index: 20000; min-width: 320px; max-width: 90vw; cursor: grab;">
