@@ -7,11 +7,28 @@
  <link href="https://fonts.googleapis.com/css2?family=Dongle&family=VT323&display=swap" rel="stylesheet">
   <style>
     body {
-      background-color: #ADADAD;
+      /* Animated ombre background: red, yellow, green, blue */
+      background: linear-gradient(135deg, #FFC0C8, #F4E5C0, #E1EFCE, #C0E0EC 100%);
+      background-size: 400% 400%;
+      animation: gradientBG 18s ease-in-out infinite;
+      min-height: 100vh;
+      background-attachment: fixed;
       font-family: 'dongle', monospace;
       color: black;
       margin: 0;
       padding: 0;
+    }
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
     }
 
     .splash-screen {
@@ -38,6 +55,7 @@
       background: linear-gradient(90deg,#fff ,#FFC0C8, #ff698a, #FFC0C8, #fff);
       background-size: 200% auto;
       -webkit-background-clip: text;
+      background-clip: text;
       -webkit-text-fill-color: transparent;
       animation: shimmer 10s linear infinite;
 
@@ -62,6 +80,13 @@
       border-radius: 12px;
     }
 
+    button, .start-btn, .bar-app, .title-bar-buttons span {
+      border-radius: 16px !important;
+      background: #fff !important;
+      color: black;
+      border: 1px solid #b9d5de;
+    }
+
     .splash-screen button:active {
       border: 2px inset #fff;
     }
@@ -81,7 +106,7 @@
 
     .title-bar {
       background: linear-gradient(to right, #FFC0C8, #FFC0C8);
-      color: white;1
+      color: white;
       padding: 5px 10px;
       font-weight: bold;
       display: flex;
@@ -97,6 +122,7 @@
       margin-left: 4px;
       border: 1px solid #000;
       cursor: pointer;
+      border-radius: 16px;
     }
 
     .content {
@@ -144,7 +170,7 @@
       bottom: 0;
       width: 100vw;
       height: 48px;
-      background: linear-gradient(90deg, #e0e0e0 0%, #b9d5de 100%);
+      background: solid (#000000);
       border-top: 2px solid #888;
       display: flex;
       align-items: center;
@@ -188,7 +214,7 @@
     .bar-app {
       background: #fff;
       border: 1px solid #b9d5de;
-      border-radius: 6px;
+      border-radius: 16px;
       padding: 4px 14px;
       margin-right: 4px;
       font-size: 18px;
