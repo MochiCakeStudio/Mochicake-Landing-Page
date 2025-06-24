@@ -34,15 +34,18 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   // --- Audio Feedback for Navigation Buttons ---
-  // Play audio for 0.01s on Home, About, Projects, Guestbook click
+  // Play guestbook chime (first 1s) on Home, About, Projects, Guestbook click
   const navButtons = document.querySelectorAll('.bar-app');
-  const sound = document.getElementById('enter-sound');
+  const guestbookChime = document.getElementById('guestbook-chime');
   navButtons.forEach(btn => {
     btn.addEventListener('click', function() {
-      if (sound) {
-        sound.currentTime = 0;
-        sound.play();
-        setTimeout(() => { sound.pause(); sound.currentTime = 0; }, 10); // 0.01 seconds
+      if (guestbookChime) {
+        guestbookChime.currentTime = 0;
+        guestbookChime.play();
+        setTimeout(() => {
+          guestbookChime.pause();
+          guestbookChime.currentTime = 0;
+        }, 1000); // Stop after 1 second
       }
     });
   });
