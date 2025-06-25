@@ -595,6 +595,17 @@ textarea {
 	margin-bottom: 1rem;
 }
 
+a, a:visited {
+  color: #C0E0EC;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+a:hover, a:focus {
+  color: #8bd5ee;
+  text-decoration: none;
+}
+
 @media (min-width: 800px) {
 
 	.navbar,
