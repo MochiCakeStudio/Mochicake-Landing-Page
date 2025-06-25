@@ -606,6 +606,37 @@ a:hover, a:focus {
   text-decoration: none;
 }
 
+.project-yellow-box .yellow-link {
+  background: none !important;
+  border: none !important;
+  color: #e0a800 !important;
+  text-decoration: underline dotted 1.5px #e0a800;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+}
+.project-yellow-box .yellow-link:hover {
+  color: #bfa000 !important;
+  text-decoration: underline solid 2px #bfa000;
+  background: none !important;
+  border: none !important;
+}
+
+.project-green-box .green-link {
+  color: #6ba86b !important; /* Slightly darker green */
+  background: none !important;
+  border: none !important;
+  text-decoration: underline dotted 1.5px #6ba86b;
+  font-weight: 600;
+  padding: 0;
+  margin: 0;
+  transition: color 0.2s;
+}
+.project-green-box .green-link:hover {
+  color: #3e7e3e !important;
+  text-decoration: underline solid 2px #3e7e3e;
+}
+
 @media (min-width: 800px) {
 
 	.navbar,
