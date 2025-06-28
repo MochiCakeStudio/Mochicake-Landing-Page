@@ -82,7 +82,12 @@ document.addEventListener('DOMContentLoaded', function() {
       popup: document.getElementById('popup-window-guestbook'),
       close: document.getElementById('popup-close-guestbook'),
       titleBar: document.getElementById('popup-title-bar-guestbook'),
-      color: '#c8e0ff',
+    },
+    FAQ: {
+      btn: getBarAppByText('FAQ'),
+      popup: document.getElementById('popup-window-faq'),
+      close: document.getElementById('popup-close-faq'),
+      titleBar: document.getElementById('popup-title-bar-faq'),
     },
   };
   Object.values(popups).forEach(({btn, popup, close, titleBar, color}) => {
