@@ -150,7 +150,7 @@ input,
 select,
 textarea {
 	border-radius: 16px !important;
-	background: #fff !important;
+	background: #fff;
 	color: black;
 	border: none !important;
 	cursor: pointer !important; /* Changed from 'none' to 'pointer' for all interactive elements */

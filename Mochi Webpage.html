@@ -161,7 +161,7 @@
         </div>
       </div>
     </div>
-    <div id="popup-window-guestbook" class="window hidden" style="position: fixed; top: 32%; left: 62%; transform: translate(-50%, 0); z-index: 20000; min-width: 320px; max-width: 90vw; cursor: grab;">
+    <div id="popup-window-guestbook" class="window hidden" style="position: fixed; top: 32%; left: 62%; transform: translate(-50%, 0); z-index: 20000; min-width: 320px; max-width: 90vw; cursor: grab; background: #fff;">
       <div class="title-bar" id="popup-title-bar-guestbook" style="cursor: grab;">
         <span>Guestbook</span>
         <div class="title-bar-buttons">
@@ -169,7 +169,15 @@
         </div>
       </div>
       <div class="content">
-        <p>This is the Guestbook popup!<br>Let visitors leave a message here.</p>
+        <form action="https://formspree.io/f/myzjnjjz" method="POST" style="display: flex; flex-direction: column; gap: 12px;">
+          <label for="guest-name">Name:</label>
+          <input type="text" id="guest-name" name="name" required style="border: none; border-radius: 8px; padding: 6px 10px; font-size: 1em; background: #C0E0EC;">
+
+          <label for="guest-message">Message:</label>
+          <textarea id="guest-message" name="message" rows="4" required style="border: none; border-radius: 8px; padding: 6px 10px; font-size: 1em; background: #C0E0EC;"></textarea>
+
+          <button type="submit" style="background: #C0E0EC; color: #222; border: none; border-radius: 8px; padding: 10px 0; font-size: 1.1em; font-family: 'dongle', monospace; font-weight: 600; cursor: pointer;">Sign Guestbook</button>
+        </form>
       </div>
     </div>
     <!-- FAQ Popup Window -->
