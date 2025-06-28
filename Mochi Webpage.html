@@ -94,6 +94,8 @@
         <span class="bar-app">Projects</span>
         <span class="bar-separator">|</span>
         <span class="bar-app">Guestbook</span>
+        <span class="bar-separator">|</span>
+        <span class="bar-app" id="faq-tab">FAQ</span>
       </div>
       <!-- Live Clock -->
       <span class="desktop-bar-clock" id="desktopClock"></span>
@@ -168,6 +170,42 @@
       </div>
       <div class="content">
         <p>This is the Guestbook popup!<br>Let visitors leave a message here.</p>
+      </div>
+    </div>
+    <!-- FAQ Popup Window -->
+    <div id="popup-window-faq" class="window hidden" style="position: fixed; top: 36%; left: 66%; transform: translate(-50%, 0); z-index: 20000; min-width: 320px; max-width: 90vw; cursor: grab;">
+      <div class="title-bar" id="popup-title-bar-faq" style="cursor: grab;">
+        <span>FAQ</span>
+        <div class="title-bar-buttons">
+          <span id="popup-close-faq">X</span>
+        </div>
+      </div>
+      <div class="content">
+        <div class="project-green-box" style="background:#E1EFCE; border-radius:10px; padding:12px 18px; margin-bottom:18px;">
+          <strong>Need help?</strong> Here are some common questions about Mochicake.Studio!
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary class="faq-yellow">What is Mochicake.Studio?</summary>
+            <p>A creative portfolio and landing page for Mochicake, featuring projects, art, and more!The Studio is pretty much everything I’ve been doing over the years into one. I started off as a simple keyboard enthusiast and then started making artisan keycaps, my own silly keycaps sets, and 3d printing. Started a YouTube channel for planning, studying sessions because I wanted to keep track of what I was doing in a digital form and now my new journey is coding so keeping it all in one seemed like a a good idea. So essentially all of me in one spot! </p>
+          </details>
+          <details>
+            <summary class="faq-yellow">How can I contact you?</summary>
+            <p>Use the Contact tab in the desktop bar, or email <a href="mailto:mochicakes.studio@gmail.com" class="green-link">mochicakes.studio@gmail.com</a>.</p>
+          </details>
+          <details>
+            <summary class="faq-yellow">Can I see your projects?</summary>
+            <p>Yes! Click the Projects tab for a popup with featured works and links.</p>
+          </details>
+          <details>
+            <summary class="faq-yellow">Is this site open source?</summary>
+            <p>Parts of the site may be open source. Check the <a href="https://github.com/mochicakecode" target="_blank" class="green-link">GitHub</a> for more info.</p>
+          </details>
+          <details>
+            <summary class="faq-yellow">How was this site made?</summary>
+            <p>Hand-coded with HTML, CSS, and JavaScript, inspired by retro desktop UIs and pastel themes.</p>
+          </details>
+        </div>
       </div>
     </div>
   </div>

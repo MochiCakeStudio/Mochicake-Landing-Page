@@ -140,4 +140,48 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     }
   });
+
+  // FAQ Popup logic
+  var faqTab = document.getElementById('faq-tab');
+  var faqPopup = document.getElementById('popup-window-faq');
+  var faqClose = document.getElementById('popup-close-faq');
+
+  if (faqTab && faqPopup && faqClose) {
+    faqTab.addEventListener('click', function() {
+      // Hide all other popups
+      var popups = document.querySelectorAll('.window');
+      popups.forEach(function(p) { p.classList.add('hidden'); });
+      // Toggle FAQ popup
+      if (faqPopup.classList.contains('hidden')) {
+        faqPopup.classList.remove('hidden');
+        faqPopup.focus && faqPopup.focus();
+      } else {
+        faqPopup.classList.add('hidden');
+      }
+    });
+    faqClose.addEventListener('click', function() {
+      faqPopup.classList.add('hidden');
+    });
+    // Make FAQ popup draggable
+    var titleBar = faqPopup.querySelector('.title-bar');
+    var isDragging = false, offsetX = 0, offsetY = 0;
+    titleBar.addEventListener('mousedown', function(e) {
+      isDragging = true;
+      offsetX = e.clientX - faqPopup.offsetLeft;
+      offsetY = e.clientY - faqPopup.offsetTop;
+      faqPopup.style.cursor = 'grabbing';
+      document.body.style.userSelect = 'none';
+    });
+    document.addEventListener('mousemove', function(e) {
+      if (!isDragging) return;
+      faqPopup.style.left = (e.clientX - offsetX) + 'px';
+      faqPopup.style.top = (e.clientY - offsetY) + 'px';
+      faqPopup.style.transform = 'none';
+    });
+    document.addEventListener('mouseup', function() {
+      isDragging = false;
+      faqPopup.style.cursor = 'grab';
+      document.body.style.userSelect = '';
+    });
+  }
 });
