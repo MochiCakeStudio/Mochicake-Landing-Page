@@ -208,4 +208,101 @@ document.addEventListener('DOMContentLoaded', function() {
       socialsArrow.style.transform = open ? 'rotate(0deg)' : 'rotate(90deg)';
     });
   }
+
+  // --- Start Menu Home Link triggers Home popup ---
+  var startmenuHomeBtn = document.getElementById('startmenuHomeBtn');
+  var homePopup = document.getElementById('popup-window-home');
+  var homeNavBtn = getBarAppByText('Home');
+  if (startmenuHomeBtn && homePopup) {
+    startmenuHomeBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      // Mimic nav Home button: open Home popup, highlight nav button
+      // Hide all other popups
+      var popups = document.querySelectorAll('.window');
+      popups.forEach(function(p) { p.classList.add('hidden'); });
+      homePopup.classList.remove('hidden');
+      if (homeNavBtn) {
+        homeNavBtn.style.background = '#ffc0c8';
+        homeNavBtn.style.color = '#000';
+      }
+    });
+  }
+
+  // --- Start Menu Links trigger popups like nav bar ---
+  var startmenuAboutBtn = document.getElementById('startmenuAboutBtn');
+  var aboutPopup = document.getElementById('popup-window-about');
+  var aboutNavBtn = getBarAppByText('About');
+  if (startmenuAboutBtn && aboutPopup) {
+    startmenuAboutBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var popups = document.querySelectorAll('.window');
+      popups.forEach(function(p) { p.classList.add('hidden'); });
+      aboutPopup.classList.remove('hidden');
+      if (aboutNavBtn) {
+        aboutNavBtn.style.background = '#ffe0c8';
+        aboutNavBtn.style.color = '#000';
+      }
+    });
+  }
+
+  var startmenuProjectsBtn = document.getElementById('startmenuProjectsBtn');
+  var projectsPopup = document.getElementById('popup-window-projects');
+  var projectsNavBtn = getBarAppByText('Projects');
+  if (startmenuProjectsBtn && projectsPopup) {
+    startmenuProjectsBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var popups = document.querySelectorAll('.window');
+      popups.forEach(function(p) { p.classList.add('hidden'); });
+      projectsPopup.classList.remove('hidden');
+      if (projectsNavBtn) {
+        projectsNavBtn.style.background = '#e0ffc8';
+        projectsNavBtn.style.color = '#000';
+      }
+    });
+  }
+
+  var startmenuGuestbookBtn = document.getElementById('startmenuGuestbookBtn');
+  var guestbookPopup = document.getElementById('popup-window-guestbook');
+  var guestbookNavBtn = getBarAppByText('Guestbook');
+  if (startmenuGuestbookBtn && guestbookPopup) {
+    startmenuGuestbookBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var popups = document.querySelectorAll('.window');
+      popups.forEach(function(p) { p.classList.add('hidden'); });
+      guestbookPopup.classList.remove('hidden');
+      if (guestbookNavBtn) {
+        guestbookNavBtn.style.background = '';
+        guestbookNavBtn.style.color = '#000';
+      }
+    });
+  }
+
+  var startmenuFaqBtn = document.getElementById('startmenuFaqBtn');
+  var faqPopup = document.getElementById('popup-window-faq');
+  var faqNavBtn = getBarAppByText('FAQ');
+  if (startmenuFaqBtn && faqPopup) {
+    startmenuFaqBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var popups = document.querySelectorAll('.window');
+      popups.forEach(function(p) { p.classList.add('hidden'); });
+      faqPopup.classList.remove('hidden');
+      if (faqNavBtn) {
+        faqNavBtn.style.background = '';
+        faqNavBtn.style.color = '#000';
+      }
+    });
+  }
+
+  // --- Start Menu Socials Button (dropdown/flyout) ---
+  var startmenuSocialsBtn = document.getElementById('startmenuSocialsBtn');
+  var socialsDropdown = document.getElementById('socials-dropdown');
+  var socialsArrow = document.getElementById('socials-arrow');
+  if (startmenuSocialsBtn && socialsDropdown && socialsArrow) {
+    startmenuSocialsBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var open = socialsDropdown.style.display === 'block';
+      socialsDropdown.style.display = open ? 'none' : 'block';
+      socialsArrow.style.transform = open ? 'rotate(0deg)' : 'rotate(90deg)';
+    });
+  }
 });

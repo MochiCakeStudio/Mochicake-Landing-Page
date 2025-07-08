@@ -52,7 +52,7 @@ body::after {
 	left: 0;
 	top: 0;
 	width: 32px;
-	height:
+	height: 32px;
 	pointer-events: none;
 	z-index: 99999;
 	background: url('assets/mochicakecode knife.png') no-repeat 0 0/contain;
