@@ -52,7 +52,7 @@
       </div>
       <div class="content">
         <p><strong>Hi, I'm Emiko!</strong></p>
-        <p>Explore my projects, dive into my brain, or leave a cute note in the guestbook.</p>
+        <p>A digital workspace where I share what Im up to, and my journey through life! So dive into my brain, or leave a cute note in the guestbook.</p>
       </div>
     </div>
     <!-- Desktop Start Menu Bar (bottom navigation) -->
@@ -95,7 +95,7 @@
             <!-- Socials Tab + Social Links (right column) -->
             <td style="vertical-align: top; padding: 0 0 0 12px;">
               <!-- Socials Button (styled like other Start Menu links, aligned) -->
-              <div id="startmenu-socials-link" style="padding-left: 8px; margin-top: 18px;">
+              <div id="startmenu-socials-link" style="margin-top: 18px;">
                 <a href="#" class="start-link" id="startmenuSocialsBtn" style="font-weight: bold; font-size: 1.08em; display: flex; align-items: center; position: relative;">
                   <span style="font-size: 1.1em; margin-right: 6px;">🌐</span>
                   <span>Socials</span>
@@ -114,25 +114,13 @@
                   </table>
                 </div>
               </div>
-              <!-- Home Link (below Socials tab) -->
-              <div id="startmenu-home-link" style="margin-top: 18px; padding-left: 8px;">
-                <a href="#" class="start-link" id="startmenuHomeBtn" style="font-weight: bold; font-size: 1.08em;">🏠 Home</a>
-              </div>
-              <!-- About Link -->
-              <div id="startmenu-about-link" style="margin-top: 8px; padding-left: 8px;">
-                <a href="#" class="start-link" id="startmenuAboutBtn" style="font-weight: bold; font-size: 1.08em;">📖 About</a>
-              </div>
-              <!-- Projects Link -->
-              <div id="startmenu-projects-link" style="margin-top: 8px; padding-left: 8px;">
-                <a href="#" class="start-link" id="startmenuProjectsBtn" style="font-weight: bold; font-size: 1.08em;">🗂️ Projects</a>
-              </div>
-              <!-- Guestbook Link -->
-              <div id="startmenu-guestbook-link" style="margin-top: 8px; padding-left: 8px;">
-                <a href="#" class="start-link" id="startmenuGuestbookBtn" style="font-weight: bold; font-size: 1.08em;">📔 Guestbook</a>
-              </div>
-              <!-- FAQ Link -->
-              <div id="startmenu-faq-link" style="margin-top: 8px; padding-left: 8px;">
-                <a href="#" class="start-link" id="startmenuFaqBtn" style="font-weight: bold; font-size: 1.08em;">❓ FAQ</a>
+              <!-- Start Menu Links (uniform size and margin) -->
+              <div id="startmenu-links" style="display: flex; flex-direction: column; gap: 10px; margin-top: 18px;">
+                <a href="#" class="start-link startmenu-btn" id="startmenuHomeBtn">🏠 Home</a>
+                <a href="#" class="start-link startmenu-btn" id="startmenuAboutBtn">📖 About</a>
+                <a href="#" class="start-link startmenu-btn" id="startmenuProjectsBtn">🗂️ Projects</a>
+                <a href="#" class="start-link startmenu-btn" id="startmenuGuestbookBtn">📔 Guestbook</a>
+                <a href="#" class="start-link startmenu-btn" id="startmenuFaqBtn">❓ FAQ</a>
               </div>
             </td>
           </tr>
@@ -152,122 +140,123 @@
       <span class="desktop-bar-clock" id="desktopClock"></span>
     </div>
 
-    <!-- Popup Windows (draggable, open/close independently) -->
-    <div id="popup-window-home" class="window hidden" style="position: fixed; top: 20%; left: 50%; transform: translate(-50%, 0); z-index: 20000; min-width: 320px; max-width: 90vw; cursor: grab;">
-      <div class="title-bar" id="popup-title-bar-home" style="cursor: grab;">
-        <span>Welcome Home!</span>
-        <div class="title-bar-buttons">
-          <span id="popup-close-home">X</span>
+    <!-- Windows Grid Container (for tab-like layout) -->
+    <div id="windows-grid" class="windows-grid">
+      <div id="popup-window-home" class="window hidden">
+        <div class="title-bar" id="popup-title-bar-home" style="cursor: grab;">
+          <span>Welcome Home!</span>
+          <div class="title-bar-buttons">
+            <span id="popup-close-home">X</span>
+          </div>
+        </div>
+        <div class="content">
+          <p>You're already on the Home screen!<br>Enjoy exploring Mochicake.Studio 💖</p>
         </div>
       </div>
-      <div class="content">
-        <p>You're already on the Home screen!<br>Enjoy exploring Mochicake.Studio 💖</p>
-      </div>
-    </div>
-    <div id="popup-window-about" class="window hidden" style="position: fixed; top: 24%; left: 54%; transform: translate(-50%, 0); z-index: 20000; min-width: 320px; max-width: 90vw; cursor: grab;">
-      <div class="title-bar" id="popup-title-bar-about" style="cursor: grab;">
-        <span>About</span>
-        <div class="title-bar-buttons">
-          <span id="popup-close-about">X</span>
+      <div id="popup-window-about" class="window hidden">
+        <div class="title-bar" id="popup-title-bar-about" style="cursor: grab;">
+          <span>About</span>
+          <div class="title-bar-buttons">
+            <span id="popup-close-about">X</span>
+          </div>
+        </div>
+        <div class="content">
+          <p>Hello there! I'm Emiko (Mochi) Keiko, a web dev! I enjoy... <br>
+            <ul>
+              <li>Coding </li>
+              <li> Making <a href="https://www.instagram.com/mochicake.studio/"> Artisan Keycaps,</a>
+                <a href="https://mochicakestudiokeysets.carrd.co">Keycap Sets,</a> and cute keyboards! </li>
+              <li><a href="https://mcsaccessories.carrd.co">3D printing </a>silly things</li>
+              <li><a href="https://www.youtube.com/playlist?list=PL5cxADZPBFxTErBNFXLRk-6E6LXAsOH91">Studying</a> 
+              <li> Logging my life in my <a href="https://www.youtube.com/playlist?list=PL5cxADZPBFxRKAWIl8sbf03zlBPwSLlhj"> journal</a></li>
+              <li>& creating cute stuff!</li>
+            </ul>
+            Interested in working with me? Shoot me an email ʕ⁠っ⁠•⁠ᴥ⁠•⁠ʔ⁠っ 
+            <a href="mailto:Mochicakes.Studio@gmail.com">here</a>
+            <h2> Education</h2>
+            <p>Currently still learning the ins and outs of coding but I think I'm making good progress with it this sites pretty cool dont you think? I'm self teaching myself so a bit slow but with enough charisma you can do anything, right? ( •̯́ ^ •̯̀) </p>
+            <h2> Other Interests </h2>
+            <li> App/ Game Development</li>
+            <li> Minecraft, Apex Legends, Animal Crossing</li>
+            <li> Magic the Gathering,Dungeons and Dragons</li>
+            <li> Reading, Cooking, Knitting</li>
+            <li> Frogs!₍𝄐⩌𝄐₎ </li>
+          </p>
         </div>
       </div>
-      <div class="content">
-        <p>Hello there! I'm Emiko (Mochi) Keiko, a web dev! I enjoy... <br>
-          <ul>
-            <li>Coding </li>
-            <li> Making <a href="https://www.instagram.com/mochicake.studio/"> Artisan Keycaps,</a>
-              <a href="https://mochicakestudiokeysets.carrd.co">Keycap Sets,</a> and cute keyboards! </li>
-            <li><a href="https://mcsaccessories.carrd.co">3D printing </a>silly things</li>
-            <li><a href="https://www.youtube.com/playlist?list=PL5cxADZPBFxTErBNFXLRk-6E6LXAsOH91">Studying</a> 
-            <li> Logging my life in my <a href="https://www.youtube.com/playlist?list=PL5cxADZPBFxRKAWIl8sbf03zlBPwSLlhj"> journal</a></li>
-            <li>& creating cute stuff!</li>
-          </ul>
-          Interested in working with me? Shoot me an email ʕ⁠っ⁠•⁠ᴥ⁠•⁠ʔ⁠っ 
-          <a href="mailto:Mochicakes.Studio@gmail.com">here</a>
-          <h2> Education</h2>
-          <p>Currently still learning the ins and outs of coding but I think I'm making good progress with it this sites pretty cool dont you think? I'm self teaching myself so a bit slow but with enough charisma you can do anything, right? ( •̯́ ^ •̯̀) </p>
-          <h2> Other Interests </h2>
-          <li> App/ Game Development</li>
-          <li> Minecraft, Apex Legends, Animal Crossing</li>
-          <li> Magic the Gathering,Dungeons and Dragons</li>
-          <li> Reading, Cooking, Knitting</li>
-          <li> Frogs!₍𝄐⩌𝄐₎ </li>
-        </p>
-      </div>
-    </div>
-    <div id="popup-window-projects" class="window hidden" style="position: fixed; top: 28%; left: 58%; transform: translate(-50%, 0); z-index: 20000; min-width: 320px; max-width: 90vw; cursor: grab;">
-      <div class="title-bar" id="popup-title-bar-projects" style="cursor: grab;">
-        <span>Projects</span>
-        <div class="title-bar-buttons">
-          <span id="popup-close-projects">X</span>
+      <div id="popup-window-projects" class="window hidden">
+        <div class="title-bar" id="popup-title-bar-projects" style="cursor: grab;">
+          <span>Projects</span>
+          <div class="title-bar-buttons">
+            <span id="popup-close-projects">X</span>
+          </div>
+        </div>
+        <div class="content">
+          <p>This is the Projects popup!<br>Showcase your work here.</p>
+          <div class="project-green-box" style="display:inline-block; background:#E1EFCE; color:#222; border-radius:8px; padding:6px 16px; font-size:1.2em; margin-top:10px; box-shadow:0 2px 6px rgba(0,0,0,0.08);">
+            Looking to hire me for your next project? Shoot me a message on my 
+            <a href="mailto:Mochicakes.Studio@gmail.com" class="green-link">work email</a>
+            or find me on my 
+            <a href="https://discord.com/invite/tntVqe8b3k" class="green-link">Server</a> ₍𝄐 ̫𝄐₎... ill share my memes with you.
+          </div>
         </div>
       </div>
-      <div class="content">
-        <p>This is the Projects popup!<br>Showcase your work here.</p>
-        <div class="project-green-box" style="display:inline-block; background:#E1EFCE; color:#222; border-radius:8px; padding:6px 16px; font-size:1.2em; margin-top:10px; box-shadow:0 2px 6px rgba(0,0,0,0.08);">
-          Looking to hire me for your next project? Shoot me a message on my 
-          <a href="mailto:Mochicakes.Studio@gmail.com" class="green-link">work email</a>
-          or find me on my 
-          <a href="https://discord.com/invite/tntVqe8b3k" class="green-link">Server</a> ₍𝄐 ̫𝄐₎... ill share my memes with you.
+      <div id="popup-window-guestbook" class="window hidden">
+        <div class="title-bar" id="popup-title-bar-guestbook" style="cursor: grab;">
+          <span>Guestbook</span>
+          <div class="title-bar-buttons">
+            <span id="popup-close-guestbook">X</span>
+          </div>
         </div>
-      </div>
-    </div>
-    <div id="popup-window-guestbook" class="window hidden" style="position: fixed; top: 32%; left: 62%; transform: translate(-50%, 0); z-index: 20000; min-width: 320px; max-width: 90vw; cursor: grab; background: #fff;">
-      <div class="title-bar" id="popup-title-bar-guestbook" style="cursor: grab;">
-        <span>Guestbook</span>
-        <div class="title-bar-buttons">
-          <span id="popup-close-guestbook">X</span>
-        </div>
-      </div>
-      <div class="content">
-        <form action="https://formspree.io/f/myzjnjjz" method="POST" style="display: flex; flex-direction: column; gap: 12px;">
-          <label for="guest-name">Name:</label>
-          <input type="text" id="guest-name" name="name" required style="border: none; border-radius: 8px; padding: 6px 10px; font-size: 1em; background: #C0E0EC;">
+        <div class="content">
+          <form action="https://formspree.io/f/myzjnjjz" method="POST" style="display: flex; flex-direction: column; gap: 12px;">
+            <label for="guest-name">Name:</label>
+            <input type="text" id="guest-name" name="name" required style="border: none; border-radius: 8px; padding: 6px 10px; font-size: 1em; background: #C0E0EC;">
 
-          <label for="guest-message">Message:</label>
-          <textarea id="guest-message" name="message" rows="4" required style="border: none; border-radius: 8px; padding: 6px 10px; font-size: 1em; background: #C0E0EC;"></textarea>
+            <label for="guest-message">Message:</label>
+            <textarea id="guest-message" name="message" rows="4" required style="border: none; border-radius: 8px; padding: 6px 10px; font-size: 1em; background: #C0E0EC;"></textarea>
 
-          <button type="submit" style="background: #C0E0EC; color: #222; border: none; border-radius: 8px; padding: 10px 0; font-size: 1.1em; font-family: 'dongle', monospace; font-weight: 600; cursor: pointer;">Sign Guestbook</button>
-        </form>
+            <button type="submit" style="background: #C0E0EC; color: #222; border: none; border-radius: 8px; padding: 10px 0; font-size: 1.1em; font-family: 'dongle', monospace; font-weight: 600; cursor: pointer;">Sign Guestbook</button>
+          </form>
+        </div>
+      </div>
+      <!-- FAQ Popup Window -->
+      <div id="popup-window-faq" class="window hidden">
+        <div class="title-bar" id="popup-title-bar-faq" style="cursor: grab;">
+          <span>FAQ</span>
+          <div class="title-bar-buttons">
+            <span id="popup-close-faq">X</span>
+          </div>
+        </div>
+        <div class="content">
+          <div class="project-green-box" style="background:#E1EFCE; border-radius:10px; padding:12px 18px; margin-bottom:18px;">
+            <strong>Need help?</strong> Here are some common questions about Mochicake.Studio!
+          </div>
+          <div class="faq-list">
+            <details>
+              <summary class="faq-yellow">What is Mochicake.Studio?</summary>
+              <p>A creative portfolio and landing page for Mochicake, featuring projects, art, and more!The Studio is pretty much everything I’ve been doing over the years into one. I started off as a simple keyboard enthusiast and then started making artisan keycaps, my own silly keycaps sets, and 3d printing. Started a YouTube channel for planning, studying sessions because I wanted to keep track of what I was doing in a digital form and now my new journey is coding so keeping it all in one seemed like a a good idea. So essentially all of me in one spot! </p>
+            </details>
+            <details>
+              <summary class="faq-yellow">How can I contact you?</summary>
+              <p>Use the Contact tab in the desktop bar, or email <a href="mailto:mochicakes.studio@gmail.com" class="green-link">mochicakes.studio@gmail.com</a>.</p>
+            </details>
+            <details>
+              <summary class="faq-yellow">Can I see your projects?</summary>
+              <p>Yes! Click the Projects tab for a popup with featured works and links.</p>
+            </details>
+            <details>
+              <summary class="faq-yellow">Is this site open source?</summary>
+              <p>Parts of the site may be open source. Check the <a href="https://github.com/mochicakecode" target="_blank" class="green-link">GitHub</a> for more info.</p>
+            </details>
+            <details>
+              <summary class="faq-yellow">How was this site made?</summary>
+              <p>Hand-coded with HTML, CSS, and JavaScript, inspired by retro desktop UIs and pastel themes.</p>
+            </details>
+          </div>
+        </div>
       </div>
     </div>
-    <!-- FAQ Popup Window -->
-    <div id="popup-window-faq" class="window hidden" style="position: fixed; top: 36%; left: 66%; transform: translate(-50%, 0); z-index: 20000; min-width: 320px; max-width: 90vw; cursor: grab;">
-      <div class="title-bar" id="popup-title-bar-faq" style="cursor: grab;">
-        <span>FAQ</span>
-        <div class="title-bar-buttons">
-          <span id="popup-close-faq">X</span>
-        </div>
-      </div>
-      <div class="content">
-        <div class="project-green-box" style="background:#E1EFCE; border-radius:10px; padding:12px 18px; margin-bottom:18px;">
-          <strong>Need help?</strong> Here are some common questions about Mochicake.Studio!
-        </div>
-        <div class="faq-list">
-          <details>
-            <summary class="faq-yellow">What is Mochicake.Studio?</summary>
-            <p>A creative portfolio and landing page for Mochicake, featuring projects, art, and more!The Studio is pretty much everything I’ve been doing over the years into one. I started off as a simple keyboard enthusiast and then started making artisan keycaps, my own silly keycaps sets, and 3d printing. Started a YouTube channel for planning, studying sessions because I wanted to keep track of what I was doing in a digital form and now my new journey is coding so keeping it all in one seemed like a a good idea. So essentially all of me in one spot! </p>
-          </details>
-          <details>
-            <summary class="faq-yellow">How can I contact you?</summary>
-            <p>Use the Contact tab in the desktop bar, or email <a href="mailto:mochicakes.studio@gmail.com" class="green-link">mochicakes.studio@gmail.com</a>.</p>
-          </details>
-          <details>
-            <summary class="faq-yellow">Can I see your projects?</summary>
-            <p>Yes! Click the Projects tab for a popup with featured works and links.</p>
-          </details>
-          <details>
-            <summary class="faq-yellow">Is this site open source?</summary>
-            <p>Parts of the site may be open source. Check the <a href="https://github.com/mochicakecode" target="_blank" class="green-link">GitHub</a> for more info.</p>
-          </details>
-          <details>
-            <summary class="faq-yellow">How was this site made?</summary>
-            <p>Hand-coded with HTML, CSS, and JavaScript, inspired by retro desktop UIs and pastel themes.</p>
-          </details>
-        </div>
-      </div>
-    </div>
-  </div>
   <!-- Main JS -->
   <script src="main.js"></script>
 </body>

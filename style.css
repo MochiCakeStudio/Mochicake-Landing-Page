@@ -855,6 +855,32 @@ a:hover, a:focus {
   color: #000;
 }
 
+.startmenu-btn {
+  min-width: 180px;
+  min-height: 44px;
+  font-size: 1.08em;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  color: #222;
+  border-radius: 12px;
+  padding: 8px 18px;
+  margin: 0;
+  box-sizing: border-box;
+  transition: background 0.15s, color 0.15s;
+}
+
+.startmenu-btn:hover, .startmenu-btn:focus {
+  background: #C0E0EC;
+  color: #000;
+}
+
+#startmenu-links {
+  width: 100%;
+}
+
 /* Hide by default, show when not .hidden */
 .start-menu-drawer.hidden {
   display: none;
