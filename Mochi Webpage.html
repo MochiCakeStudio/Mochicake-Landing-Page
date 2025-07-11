@@ -42,19 +42,7 @@
       <span> owo?/ Welcome to my site! I am currently: Still building it and slightly frustrated but we'll get there eventually, wish me luck! </span>
     </div>
 
-    <!-- Main Welcome Window -->
-    <div class="window">
-      <div class="title-bar">
-        <span>Mochicake.exe</span>
-        <div class="title-bar-buttons">
-          <span>_</span><span>[]</span><span>X</span>
-        </div>
-      </div>
-      <div class="content">
-        <p><strong>Hi, I'm Emiko!</strong></p>
-        <p>A digital workspace where I share what Im up to, and my journey through life! So dive into my brain, or leave a cute note in the guestbook.</p>
-      </div>
-    </div>
+  
     <!-- Desktop Start Menu Bar (bottom navigation) -->
     <div class="desktop-bar">
       <!-- Start Button with Heart SVG -->
@@ -89,7 +77,7 @@
                 <img src="assets/waldo.jpg" alt="User Profile" style="width: 72px; height: 72px; border-radius: 50%; object-fit: cover; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 8px;">
                 <div style="font-size: 1.1em; font-weight: bold; margin-bottom: 2px;">Emiko (Mochi)</div>
                 <div style="font-size: 0.95em; color: #888; margin-bottom: 8px;">Web Dev & Maker</div>
-                <div style="font-size: 0.9em; color: #666;">"Making cute things & code!"</div>
+                <div style="font-size: 0.9em; color: #666;">"Making cute things & with code!"</div>
               </div>
             </td>
             <!-- Socials Tab + Social Links (right column) -->
@@ -116,26 +104,14 @@
               </div>
               <!-- Start Menu Links (uniform size and margin) -->
               <div id="startmenu-links" style="display: flex; flex-direction: column; gap: 10px; margin-top: 18px;">
-                <a href="#" class="start-link startmenu-btn" id="startmenuHomeBtn">🏠 Home</a>
-                <a href="#" class="start-link startmenu-btn" id="startmenuAboutBtn">📖 About</a>
-                <a href="#" class="start-link startmenu-btn" id="startmenuProjectsBtn">🗂️ Projects</a>
-                <a href="#" class="start-link startmenu-btn" id="startmenuGuestbookBtn">📔 Guestbook</a>
-                <a href="#" class="start-link startmenu-btn" id="startmenuFaqBtn">❓ FAQ</a>
+                <!-- Removed Home, About, Projects, Guestbook, FAQ links for grid placement -->
+                <!-- You can add other links here if needed -->
               </div>
             </td>
           </tr>
         </table>
       </div>
-      <!-- Navigation Buttons (open popups) -->
-      <div class="desktop-bar-apps nav-links-inline">
-        <span class="bar-app">About</span>
-        <span class="bar-separator">|</span>
-        <span class="bar-app">Projects</span>
-        <span class="bar-separator">|</span>
-        <span class="bar-app">Guestbook</span>
-        <span class="bar-separator">|</span>
-        <span class="bar-app" id="faq-tab">FAQ</span>
-      </div>
+  
       <!-- Live Clock -->
       <span class="desktop-bar-clock" id="desktopClock"></span>
     </div>
@@ -257,7 +233,142 @@
         </div>
       </div>
     </div>
+    <!-- Home Grid Windows (12 total, responsive) -->
+    <div class="home-grid">
+      <div class="window">
+        <div class="title-bar"><span>🏠 Home</span></div>
+        <div class="content">
+        <p>Welcome! This is my digital workspace where I share what I'm up to and my journey through life! Dive into my brain, or leave a cute note in the guestbook.</p>
+        </div>
+      </div>
+      <div class="window">
+        <div class="title-bar"><span>📖 About</span></div>
+        <div class="content">
+          <p>Hello there! I'm Emiko (Mochi) Keiko, a web dev!<br>Check out my projects and interests below.</p>
+        </div>
+      </div>
+      <div class="window">
+        <div class="title-bar"><span>🗂️ Projects</span></div>
+        <div class="content">
+          <p>Showcase your work here.<br>Links to featured projects and more.</p>
+        </div>
+      </div>
+      <div class="window">
+        <div class="title-bar"><span>📔 Guestbook</span></div>
+        <div class="content">
+          <p>Leave a cute note in the guestbook!<br>Say hi or share your thoughts.</p>
+        </div>
+      </div>
+      <div class="window">
+        <div class="title-bar"><span>❓ FAQ</span></div>
+        <div class="content">
+          <p>Frequently Asked Questions.<br>Find answers to common queries here.</p>
+        </div>
+      </div>
+      <div class="window">
+        <div class="title-bar"><span>Gallery</span></div>
+        <div class="content">
+          <p>Image gallery coming soon!<br>Stay tuned for cute photos and art.</p>
+        </div>
+      </div>
+      <div class="window">
+        <div class="title-bar"><span>Blog</span></div>
+        <div class="content">
+          <p>Read my latest thoughts and updates.<br>Blog feature coming soon!</p>
+        </div>
+      </div>
+      <div class="window">
+        <div class="title-bar"><span>Contact</span></div>
+        <div class="content">
+          <p>Want to reach out? Email me at <a href="mailto:Mochicakes.Studio@gmail.com">Mochicakes.Studio@gmail.com</a></p>
+        </div>
+      </div>
+      <div class="window">
+        <div class="title-bar"><span>Resources</span></div>
+        <div class="content">
+          <p>Links to useful resources and tools for makers and coders.</p>
+        </div>
+      </div>
+      <div class="window">
+        <div class="title-bar"><span>Friends</span></div>
+        <div class="content">
+          <p>Shoutout to my friends and collaborators!<br>More info soon.</p>
+        </div>
+      </div>
+      <div class="window">
+        <div class="title-bar"><span>Changelog</span></div>
+        <div class="content">
+          <p>See what's new on Mochicake.Studio.<br>Changelog updates coming soon.</p>
+        </div>
+      </div>
+      <div class="window">
+        <div class="title-bar"><span>Random</span></div>
+        <div class="content">
+          <p>Random thoughts, memes, and more.<br>Just for fun!</p>
+        </div>
+      </div>
+    </div>
+    <!-- Responsive Grid Info Box -->
+    <div class="window" style="margin-bottom: 18px; background: #E1EFCE; border: 2px solid #b9d5de; color: #222; max-width: 900px; box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
+      <div class="title-bar" style="background: linear-gradient(to right, #C0E0EC, #E1EFCE); color: #333;">
+        <span>💡 Responsive Grid Info</span>
+      </div>
+      <div class="content" style="font-size: 1.08em;">
+        <ul style="margin: 0 0 0 1.2em; padding: 0;">
+          <li><strong>Desktop:</strong> The grid shows as many columns as fit (each at least 220px wide).</li>
+          <li><strong>Tablet:</strong> At screen widths below 1200px, the grid switches to <b>2 columns</b>.</li>
+          <li><strong>Mobile:</strong> At screen widths below 700px, the grid becomes <b>1 column</b> for easy reading.</li>
+        </ul>
+        <div style="margin-top: 8px; font-size: 0.98em; color: #666;">
+          The grid automatically adapts to your device—no horizontal scrolling needed!
+        </div>
+      </div>
+    </div>
+    <!-- End Responsive Grid Info Box -->
+    <style>
+      /* Masonry layout: use columns, not grid! */
+      .home-grid {
+        column-count: 4;
+        column-gap: 24px;
+        max-width: 1000px;
+        margin: 48px auto 0 auto;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      @media (max-width: 1200px) {
+        .home-grid {
+          column-count: 2;
+        }
+      }
+      @media (max-width: 700px) {
+        .home-grid {
+          column-count: 1;
+        }
+      }
+      .home-grid .window {
+        display: block;
+        break-inside: avoid;
+        margin-bottom: 30px;
+        width: 100%;
+        box-sizing: border-box;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        border-radius: 12px;
+        background: #fff;
+        word-break: break-word;
+      }
+    </style>
+    <script>
+      // Remove any grid-based styles injected by JS for .home-grid
+      document.addEventListener('DOMContentLoaded', function() {
+        const styleTags = Array.from(document.querySelectorAll('style'));
+        styleTags.forEach(tag => {
+          if (tag.textContent.includes('display: grid') && tag.textContent.includes('.home-grid')) {
+            tag.parentNode.removeChild(tag);
+          }
+        });
+      });
+    </script>
   <!-- Main JS -->
   <script src="main.js"></script>
-</body>
+  </body>
 </html>

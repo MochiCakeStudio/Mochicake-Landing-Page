@@ -1,3 +1,4 @@
+
 /*
 ====================================
  Mochicake.Studio Main Stylesheet
@@ -11,11 +12,7 @@
 ====================================
 */
 
-:root {
-	--primary: rgba(37, 37, 37, 1.0); /* Main dark color */
-	--secondary: #fac9d1; /* Accent color */
-	--shades: rgba(238, 238, 238, 1.0); /* Light shade */
-}
+@import url('theme.css');
 
 * {
 	scroll-behavior: smooth;
@@ -178,13 +175,14 @@ textarea {
  Window & Popup Styles
 ------------------------------------
 */
+
 .window {
-	width: 600px;
-	margin: 50px auto;
-	border: 3px solid #000;
-	box-shadow: 3px 3px 0px #ADADAD;
-	background-color: #ffffff;
-	border-radius: 12px;
+   width: 600px;
+   margin: 24px auto;
+   border: 3px solid #000;
+   box-shadow: 4px 4px 0 #adadad; /* Retro solid shadow, offset */
+   background-color: #ffffff;
+   border-radius: 12px;
 }
 
 .title-bar {
@@ -248,7 +246,7 @@ textarea {
 .marquee span {
 	display: inline-block;
 	padding-left: 100%;
-	animation: scroll 15.5s linear infinite;
+	animation: scroll 69s linear infinite;
 }
 
 @keyframes scroll {
@@ -518,7 +516,10 @@ textarea {
 	display: block;
 }
 
-.logo {
+.large-box {
+  min-width: 150px;
+  min-height: 250px;
+}ogo {
 	display: inline-block;
 	padding-top: .3125rem;
 	padding-bottom: .3125rem;
@@ -884,4 +885,40 @@ a:hover, a:focus {
 /* Hide by default, show when not .hidden */
 .start-menu-drawer.hidden {
   display: none;
+}
+
+/*
+------------------------------------
+ Home Grid Styles
+------------------------------------
+*/
+.home-grid {
+  column-count: 4;           /* Number of columns on desktop */
+  column-gap: 24px;          /* Horizontal space between columns */
+  max-width: 1000px;
+  margin: 48px auto 0 auto;
+  padding: 0;
+}
+
+@media (max-width: 1200px) {
+  .home-grid {
+	column-count: 2;
+  }
+}
+@media (max-width: 700px) {
+  .home-grid {
+	column-count: 1;
+  }
+}
+
+.home-grid .window {
+  display: block;
+  break-inside: avoid;
+  margin-bottom: 16px;       /* Vertical space between rows */
+  width: 100%;
+  box-sizing: border-box;
+  box-shadow: 4px 4px 0 #adadad; /* Retro solid shadow, offset */
+  border-radius: 12px;
+  background: #fff;
+  word-break: break-word;
 }

@@ -1,0 +1,43 @@
+/*
+====================================
+ Mochicake.Studio Theme Variables
+------------------------------------
+- Color palette
+- Font families
+- Shadows, border radius, spacing
+====================================
+*/
+
+:root {
+  /* Brand Colors */
+  --primary: rgba(37, 37, 37, 1.0); /* Main dark color */
+  --secondary: #fac9d1; /* Accent color */
+  --shades: rgba(238, 238, 238, 1.0); /* Light shade */
+  --highlight: #FFC0C8; /* Pink highlight */
+  --highlight-yellow: #fffbe6;
+  --highlight-green: #E1EFCE;
+  --highlight-blue: #C0E0EC;
+  --accent-pink: #ff698a;
+  --accent-blue: #8bd5ee;
+  --accent-yellow: #e0a800;
+  --accent-green: #6ba86b;
+  --border: #b9d5de;
+  --shadow: 0 2px 12px rgba(0,0,0,0.08);
+
+  /* Typography */
+  --font-main: 'dongle', monospace;
+  --font-mono: monospace;
+  --font-cursive: 'Sniglet', cursive;
+
+  /* Border radius */
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+
+  /* Spacing */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 48px;
+}
